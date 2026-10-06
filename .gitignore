@@ -90,3 +90,4 @@ local-protocol/
 # Fixed upstream checkouts are recreated by tools/setup_upstream.py
 工程/源码/
 工程/课程扩展/TUM跨场景迭代/来源/GS-ICP-SLAM/
+工程/交互演示/assets/office-input/
