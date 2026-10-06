@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-06",
+  "author": "Project authors; compiled by gpt-6 documentation subagent",
+  "metric_source": "工程/交互演示/assets/scenes.json",
+  "video_description_source_project_relative": "gpt-6/汇报/成品/演示/播放说明.md",
+  "images": [
+    {
+      "file": "docs/media/natural-trajectories.png",
+      "source_project_relative": "gpt-6/汇报/图表/自然轨迹对照.png",
+      "source_last_write_time": "2026-10-03T12:13:15.7750792+08:00",
+      "sha256": "719dff8015f1cb8b4e5d3cb70f081f4588ddf7c0739685275dc76087dfb3e962",
+      "bytes": 469396,
+      "caption": "TUM office、TUM xyz、Replica office0 的参考与 SE3 对齐估计轨迹",
+      "inspected_with": "view_image",
+      "transformation": "none; byte-identical copy",
+      "evidence_status": "historical 2026-10-03 to 2026-10-05; not current checkout acceptance"
+    },
+    {
+      "file": "docs/media/natural-performance.png",
+      "source_project_relative": "gpt-6/汇报/图表/自然性能曲线.png",
+      "source_last_write_time": "2026-10-03T12:13:15.7710771+08:00",
+      "sha256": "958631f2dd841d06f0900b3abb46203effed24d5a99ffe24b3ef414551d9fba4",
+      "bytes": 108651,
+      "caption": "历史 TUM office 跟踪处理与到达延迟曲线，含初始化峰值",
+      "inspected_with": "view_image",
+      "transformation": "none; byte-identical copy",
+      "evidence_status": "historical 2026-10-03 to 2026-10-05; not current checkout acceptance"
+    },
+    {
+      "file": "docs/media/unity-local.png",
+      "source_project_relative": "gpt-6/汇报/图表/Unity输入与地图.png",
+      "source_last_write_time": "2026-10-03T12:13:15.7600771+08:00",
+      "sha256": "c14ba6f3e568d9bf7975fd9fdadf2e2ff31c6afda0fe919c8607f6fa9656547e",
+      "bytes": 208222,
+      "caption": "Unity 医学合成局部输入与地图，尺度和深度编码未闭合",
+      "inspected_with": "view_image",
+      "transformation": "none; byte-identical copy",
+      "evidence_status": "historical 2026-10-03 to 2026-10-05; not current checkout acceptance"
+    },
+    {
+      "file": "docs/media/highcam-diagnostic.png",
+      "source_project_relative": "gpt-6/汇报/图表/HighCam失败时序.png",
+      "source_last_write_time": "2026-10-03T12:13:15.7580772+08:00",
+      "sha256": "87c741f0633ba43d1849644794c9f367f519f5b8b57a3943024147b55faa48e9",
+      "bytes": 410835,
+      "caption": "HighCam 局部诊断帧，1000 帧位姿验收失败",
+      "inspected_with": "view_image",
+      "transformation": "none; byte-identical copy",
+      "evidence_status": "historical 2026-10-03 to 2026-10-05; not current checkout acceptance"
+    },
+    {
+      "file": "docs/media/website-overview.jpg",
+      "source_project_relative": "gpt-6/工程/交互演示/验证/三级目录/桌面目录与地图.jpg",
+      "source_last_write_time": "2026-10-05T15:48:04.0190198+08:00",
+      "sha256": "87aa61cf564f8c75881ddd3c29dcea30ebe3302fc2e8793e1076f67bc6ecc8c1",
+      "bytes": 113538,
+      "caption": "历史三级目录与 TUM 最终地图浏览截图，可见毛刺",
+      "inspected_with": "view_image",
+      "transformation": "none; byte-identical copy",
+      "evidence_status": "historical 2026-10-03 to 2026-10-05; not current checkout acceptance"
+    }
+  ],
+  "videos": [
+    "natural-tum-online.mp4",
+    "natural-replica-online.mp4",
+    "natural-map-tour.mp4",
+    "medical-unity-local.mp4",
+    "medical-highcam-diagnostic.mp4"
+  ],
+  "release_base": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/",
+  "video_notes": "Natural online videos combine actual saved keyframe maps with input aligned afterward to experiment log clocks; map tour is offline. Medical clips are local explorations or failure diagnostics."
+}

@@ -51,7 +51,7 @@ def verify_observations(protocol,observations,dataset_root):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--protocol',required=True);p.add_argument('--observations',required=True)
  p.add_argument('--dataset-root',required=True);p.add_argument('--output-dir',required=True);a=p.parse_args()
- source=Path(a.protocol);obs_path=Path(a.observations);old=json.loads(source.read_text());observations=json.loads(obs_path.read_text())
+ source=Path(a.protocol);obs_path=Path(a.observations);old=json.loads(source.read_text(encoding='utf-8'));observations=json.loads(obs_path.read_text(encoding='utf-8'))
  if observations['protocol_sha256']!=sha256(source):raise ValueError('Canonical observation manifest refers to another protocol')
  out=Path(a.output_dir);scene=old['scene'];paths=[out/f'{scene}.json',out/f'{scene}-observations.json',out/f'{scene}-host-materialization.json']
  if any(path.exists() for path in paths):raise ValueError('Use a new output directory; preserve existing protocols')

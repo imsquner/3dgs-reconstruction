@@ -14,6 +14,10 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install numpy scipy
+      - run: python -m unittest discover -s tests -v
+      - run: python -m unittest discover -s tools -p 'test_runtime_cli.py' -v
+      - run: bash -n tools/setup_wsl.sh
+      - run: python tools/preflight.py
       - run: node --test 工程/交互演示/test_*.mjs
       - run: python -m unittest test_quality_core test_portable_protocol test_atomic_json_retry test_frozen_plan_semantics test_projection_diagnostic -v
         working-directory: 工程/课程扩展/TUM跨场景迭代

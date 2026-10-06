@@ -9,3 +9,4 @@
 *.cmd text eol=crlf
 *.patch -whitespace
 工程/交互演示/vendor/** -text -whitespace
+docs/licenses/** -text -whitespace

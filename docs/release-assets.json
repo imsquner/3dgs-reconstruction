@@ -1,0 +1,3200 @@
+{
+  "release": "v0.1.0-assets",
+  "repository": "imsquner/3dgs-reconstruction",
+  "assets": [
+    {
+      "id": "website-core",
+      "name": "website-core.zip",
+      "kind": "website",
+      "bytes": 50064629,
+      "sha256": "bfeb2ad79578b5b5735c9442f0a161427a42dbbd46fd25a845b4bb9909cc45e6",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/website-core.zip",
+      "format": "zip",
+      "target": ".",
+      "description": "TUM + Unity maps and 504 sampled RGB previews"
+    },
+    {
+      "id": "replica-research",
+      "name": "replica-research.zip",
+      "kind": "website",
+      "bytes": 61346032,
+      "sha256": "d7b4a9c166c7f13429f9d62fa59d334c51ba02bb8e68fdc4d23f53a72f4b58e6",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/replica-research.zip",
+      "format": "zip",
+      "target": ".",
+      "description": "Optional Replica-generated map; research terms required",
+      "requires_acceptance": "replica-research"
+    },
+    {
+      "id": "tum-desk",
+      "name": "rgbd_dataset_freiburg1_desk.tgz",
+      "kind": "dataset",
+      "bytes": 344011403,
+      "sha256": "e983d6830916e66dc4a46a71368046b149b283de87769690e7aa4e0b9483530c",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/rgbd_dataset_freiburg1_desk.tgz",
+      "format": "tar.gz",
+      "target": "data",
+      "archive_root": "rgbd_dataset_freiburg1_desk",
+      "description": "Complete original TUM RGB-D sequence archive; CC BY 4.0; unchanged bytes"
+    },
+    {
+      "id": "tum-xyz",
+      "name": "rgbd_dataset_freiburg1_xyz.tgz",
+      "kind": "dataset",
+      "bytes": 448204271,
+      "sha256": "a0236d97b8c30cd93b653656d2b6c293ff7c982a4130ef2a1a8beecdb124ef98",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/rgbd_dataset_freiburg1_xyz.tgz",
+      "format": "tar.gz",
+      "target": "data",
+      "archive_root": "rgbd_dataset_freiburg1_xyz",
+      "description": "Complete original TUM RGB-D sequence archive; CC BY 4.0; unchanged bytes"
+    },
+    {
+      "id": "tum-office",
+      "name": "rgbd_dataset_freiburg3_long_office_household.tgz",
+      "kind": "dataset",
+      "bytes": 1483556251,
+      "sha256": "c7cd8e1afb87c80e5744a356214819b110fa09b4744fa4ba0cc2382f9ba59e9c",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/rgbd_dataset_freiburg3_long_office_household.tgz",
+      "format": "tar.gz",
+      "target": "data",
+      "archive_root": "rgbd_dataset_freiburg3_long_office_household",
+      "description": "Complete original TUM RGB-D sequence archive; CC BY 4.0; unchanged bytes"
+    },
+    {
+      "id": "natural-tum-online",
+      "name": "natural-tum-online.mp4",
+      "kind": "video",
+      "bytes": 7319349,
+      "sha256": "a57391812310c29c43fe3a372a68cd8d1c0050e91a7842cfe04ab2ac2967691d",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/natural-tum-online.mp4",
+      "format": "file",
+      "target": "downloads/videos",
+      "description": "Existing experimental footage; see docs/SHOWCASE.md for temporal/medical limitations"
+    },
+    {
+      "id": "natural-replica-online",
+      "name": "natural-replica-online.mp4",
+      "kind": "video",
+      "bytes": 3359317,
+      "sha256": "39552d35b2ca68ee1c4eb2660e59d1fed70f2104d9b6c5b0a4da7e4e0bbe90c6",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/natural-replica-online.mp4",
+      "format": "file",
+      "target": "downloads/videos",
+      "description": "Existing experimental footage; see docs/SHOWCASE.md for temporal/medical limitations"
+    },
+    {
+      "id": "natural-map-tour",
+      "name": "natural-map-tour.mp4",
+      "kind": "video",
+      "bytes": 3896130,
+      "sha256": "249212693a415531dea14d30be6be7134c5b66ccd2eaac9b22addef484b09c1e",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/natural-map-tour.mp4",
+      "format": "file",
+      "target": "downloads/videos",
+      "description": "Existing experimental footage; see docs/SHOWCASE.md for temporal/medical limitations"
+    },
+    {
+      "id": "medical-unity-local",
+      "name": "medical-unity-local.mp4",
+      "kind": "video",
+      "bytes": 830374,
+      "sha256": "2e074cf6d0983d586ad7a069d20ce10c6b0cfb591603ccdb59c0f5a6e9b4d9d9",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/medical-unity-local.mp4",
+      "format": "file",
+      "target": "downloads/videos",
+      "description": "Existing experimental footage; see docs/SHOWCASE.md for temporal/medical limitations"
+    },
+    {
+      "id": "medical-highcam-diagnostic",
+      "name": "medical-highcam-diagnostic.mp4",
+      "kind": "video",
+      "bytes": 1579824,
+      "sha256": "22ef35b3182f58139f4bc4047357bf13dbbe726356cf998b90a60c2d526f5dd8",
+      "url": "https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.1.0-assets/medical-highcam-diagnostic.mp4",
+      "format": "file",
+      "target": "downloads/videos",
+      "description": "Existing experimental footage; see docs/SHOWCASE.md for temporal/medical limitations"
+    }
+  ],
+  "files": [
+    {
+      "path": "工程/交互演示/assets/office-exp-01-web.ply",
+      "bytes": 4705607,
+      "sha256": "d1da1c7bd1de34cf5902c2c287155f2585a30346d60be20bd5569feb37c58bc8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-02-web.ply",
+      "bytes": 4103399,
+      "sha256": "1a2f37212535eb71f69d201d915ce6dfcb7344265c177f40b99287baa0283486",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-03-web.ply",
+      "bytes": 4228995,
+      "sha256": "277deaf671ce04a7e34291275221311a5209712aa43693e636a52acfb0f77eb2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-04-web.ply",
+      "bytes": 4075451,
+      "sha256": "5f4f109337caf5f519638ebba7ca7c28f96fc3a6e64aeaf884c777262b1b6d58",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-observations.rgb",
+      "bytes": 1258323,
+      "sha256": "822a9ca83bfd6374bfab0e38db6e7e60da74981cfc3ab23dfe4c0765a9db5939",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-observations.xyz",
+      "bytes": 5033292,
+      "sha256": "1123063ae04cf4a0bfda2db18536225cd491ccc318c4c4f56a99b2f6b761bd0b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-web.ply",
+      "bytes": 26411684,
+      "sha256": "6d68d7dfd91c45cf0adf6ec2f48866c16d3a63e35354f32efc05cfdb740a1fba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/unity.ply",
+      "bytes": 412426,
+      "sha256": "d06b3f53f55a4c5f8a81df7c993548fa7f98a524b4d8b0e13f3095ce18f856b0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00000.jpg",
+      "bytes": 19418,
+      "sha256": "f407212a3387b76f0edc5569676456cdff83d065f1c43da175253aa4b1683399",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00005.jpg",
+      "bytes": 19532,
+      "sha256": "6e7fd0254ec31230530839474088dea419d5e85d54c4dd15bf80aee75e544f81",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00010.jpg",
+      "bytes": 19616,
+      "sha256": "161c42d16c1e300b0e881f454a7115b092c2158faf8243a945b916ba178f5aa6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00015.jpg",
+      "bytes": 19414,
+      "sha256": "c025a400096ee4d930050e5fbc458c5aa2493bd3b5bcba4e346827243f5ed820",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00020.jpg",
+      "bytes": 19619,
+      "sha256": "0721dce34331500767cf6babca8abc59ee2b8898052706b2e16e04dcb6ce4609",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00025.jpg",
+      "bytes": 19745,
+      "sha256": "fdd15d0cc39a569d65bf54580c13714d2beb4dbd1109f01f79d77182cb4d5bcb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00030.jpg",
+      "bytes": 19344,
+      "sha256": "ec86c27e98eb71534932015e7653647cfa343d45247cb34cabc4441379e1ecf3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00035.jpg",
+      "bytes": 18288,
+      "sha256": "493e15e38c0b2ba797c38a9de892a829c046805784ffd78f4364c9ef0eba03fd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00040.jpg",
+      "bytes": 18681,
+      "sha256": "424c9d9f03b251708190d89b31065313fcb2cd8bb37236b609ee00f70514dc65",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00045.jpg",
+      "bytes": 18707,
+      "sha256": "686a0efb804dd9923234f373bd787a8535751e0dd159670f3b51ead45ffffec2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00050.jpg",
+      "bytes": 18935,
+      "sha256": "5b8ef47536ed94f5ee286cd11f243f4d700cfbaf60224473a5e51127b7f04b3f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00055.jpg",
+      "bytes": 18449,
+      "sha256": "4d179bf90c3814dafec675d829ceff97dcf7f546b16c99cc948ace202864ac2a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00060.jpg",
+      "bytes": 19083,
+      "sha256": "278c5e3494a8daa90b045b586a63df99d99a24b71e5bd6b7201b48166564d577",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00065.jpg",
+      "bytes": 18835,
+      "sha256": "05a2acb5f017240a1ef18afac63eff3d23cdeb122eeb1de5c9955ac7635888f0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00070.jpg",
+      "bytes": 18717,
+      "sha256": "1804d67ba0f1b686ad73b6e95fca9bc2958fa4b352ba97a89f72047e4bc49a5a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00075.jpg",
+      "bytes": 18832,
+      "sha256": "500d86ea72d6008bf92aec028f538a057228dcfabf75236264acf53c37000aad",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00080.jpg",
+      "bytes": 18446,
+      "sha256": "c598059621aec8ef1149216db3a9e7e8032ce9610d4c943972f001a6e3e9e793",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00085.jpg",
+      "bytes": 19041,
+      "sha256": "3f7341b9255ea4b5ebf58a2938d965a5b2a661cfbabe57ee1076f80c7e8f041a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00090.jpg",
+      "bytes": 18701,
+      "sha256": "fd0adf481cbdbeef99ef21744e706a0b033eec744c5655f2939e17d0d51def69",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00095.jpg",
+      "bytes": 17808,
+      "sha256": "2df50b8e0dc0c7aaa2f7b3b21ce070cf70bc9f74fd087231eea6fd6aa7c79edf",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00100.jpg",
+      "bytes": 17715,
+      "sha256": "61359e794cba34e9cd91a00cbfd29931e83a518dcb948bc5cfafe20435630119",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00105.jpg",
+      "bytes": 16966,
+      "sha256": "5d99dba809708aec17ac135383787d10fa296d43c68d34de296a50ac0a168dc8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00110.jpg",
+      "bytes": 16654,
+      "sha256": "5683dc9c4650f5ecb9c29a126cb4e50cac9a83c1e5f50745cf9b045381bed110",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00115.jpg",
+      "bytes": 17453,
+      "sha256": "d4a674560d80c301590eda88e934c35215a5af67f3a1c17695343cac6b75c1e7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00120.jpg",
+      "bytes": 17207,
+      "sha256": "4d0972cdef47897b68a3c3857fa34e1f26f418f783706e19583967ca6b5cb807",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00125.jpg",
+      "bytes": 16987,
+      "sha256": "e2b22dadde991b247f20adc2bf41941f4fbda274b0db1d460751db6e2f43e277",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00130.jpg",
+      "bytes": 17842,
+      "sha256": "95fc3fe95538e9dc9851aa475fb7f869ee7ff724e3d58409e753c56f145973d6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00135.jpg",
+      "bytes": 18022,
+      "sha256": "63e26997e94745ed92bcca8c25846c70547af177956390bbaaf7ecda7f6e5cee",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00140.jpg",
+      "bytes": 18114,
+      "sha256": "7c0804d49ba7aa36e4ce17e5caaefba0ab8dba223cf05cfda9c14abf3d16f1c6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00145.jpg",
+      "bytes": 18402,
+      "sha256": "badac8cc853b87a27de5847be688ca01d69d72c267a161a1d5dfce94da2a2bb3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00150.jpg",
+      "bytes": 18899,
+      "sha256": "885cc3a647035d8578d8e94a009dd8df397856b6403afa6c788727bf50bacf4b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00155.jpg",
+      "bytes": 19527,
+      "sha256": "a84f638556a30107846e9412a575d546ab256f6f5a001d4f72945fd6b69cadba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00160.jpg",
+      "bytes": 20092,
+      "sha256": "52b5f372d6a74e552f20620d7e45dbfc63cf3fb36b9ec8b5da4f0b2ae2f485fe",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00165.jpg",
+      "bytes": 19986,
+      "sha256": "25a12cd4e61000b694d323f7736041ad5831eb97ca50f6d79ea36878cc6a6bf3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00170.jpg",
+      "bytes": 21245,
+      "sha256": "6d5a257dbfc1dd166a061ed4da80e45738befb6b5f51390dc5c3913c79e269a1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00175.jpg",
+      "bytes": 20296,
+      "sha256": "4ed760651fd79e2452ae998911bf5cd50ab038ecced1fa559b4262a2a9e215bd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00180.jpg",
+      "bytes": 21442,
+      "sha256": "5650757e342f045c0b3389332fd272d1c341a29c7879381358fc6aa5b1938d04",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00185.jpg",
+      "bytes": 21929,
+      "sha256": "24de48a5623e7f541c3af6adf11f6afc2feb1f297c1b792542a1703615a27b93",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00190.jpg",
+      "bytes": 20676,
+      "sha256": "cc8c5c18bc35c89d6bb0055965b396b9c4ac45c23327635bdc83bc59b67fe5db",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00195.jpg",
+      "bytes": 18665,
+      "sha256": "4542f36daeb6828088d1857683c92437838d3739225abd06f1613049152e9e80",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00200.jpg",
+      "bytes": 20144,
+      "sha256": "822e0a1d9a77bf635f3731e91ed5722a923650eebf10d2188e221dd89e33eb05",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00205.jpg",
+      "bytes": 21042,
+      "sha256": "b5e818953841c403703a09eed05b90dbb75bb3f4c86151f0b7aed3d25127e3ab",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00210.jpg",
+      "bytes": 20952,
+      "sha256": "64ff5c8e90c627220af2b76bb51c9bc2bb329c13a11defbe73ba4bcd84badfc8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00215.jpg",
+      "bytes": 20197,
+      "sha256": "f22a1a0f1e6ba77227f81c03f2e2877ff54b287518c75dcc21b0ef7a84ce71aa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00220.jpg",
+      "bytes": 19924,
+      "sha256": "b88205f7eacf31d90f5b565f598e275504473fb1a3e60a7e57233417ddce9c5c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00225.jpg",
+      "bytes": 22368,
+      "sha256": "383ed5bd6fc9ea008b5c406d2625b96a28193c82c681844e606be0a0634c89c3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00230.jpg",
+      "bytes": 20179,
+      "sha256": "cea7056fddc91247167b97c86a76f1c80838d675837e25fc34ba7b85d05de8e7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00235.jpg",
+      "bytes": 21999,
+      "sha256": "f073a61c41acae2748de2624fa10c74fe3fd371634b17dd1c719537e0236cd69",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00240.jpg",
+      "bytes": 22353,
+      "sha256": "9e3ada946cc111d41f2370f4f95e68db646883372e738bc08d5671eb730ce9f2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00245.jpg",
+      "bytes": 19813,
+      "sha256": "2197a7c7affdfb0c5df448944161952e92a809eb50fca4407dd2bc7a0a6968ae",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00250.jpg",
+      "bytes": 19930,
+      "sha256": "a4613a5aeb9aeb0d47e61b8237294264817a0da46145b6eac844d14b86bdef87",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00255.jpg",
+      "bytes": 19980,
+      "sha256": "82b5fb5d0061f92a6556db99f1c296ec5f410e2a2fae56cc7777fac9d6f66f9e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00260.jpg",
+      "bytes": 21342,
+      "sha256": "76d7a0e0b06a3e5607b9eacb297b0b26764b3b52ec0a3533c37a6f129385a9e6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00265.jpg",
+      "bytes": 21827,
+      "sha256": "3d5fd61a413e59e48a35496aaaf42301cd27f0a65738bfd52703dde154a75369",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00270.jpg",
+      "bytes": 20321,
+      "sha256": "db2b36201622c66a2c4edf4f88918b66cbbf194890379a49fc3250d50ab5d2ba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00275.jpg",
+      "bytes": 22495,
+      "sha256": "87e35fb1565d499561dcf5dd288736571f8933ae6099e5368eba4627a7247cdb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00280.jpg",
+      "bytes": 20878,
+      "sha256": "f0570ed7c3aeb83581a2548ca29cb1aee323fcc11aebe5174bd96ec06642e411",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00285.jpg",
+      "bytes": 21252,
+      "sha256": "4038b63bf79f64f3e75bccc8654388c26904d222f24c824994722ac0b625044f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00290.jpg",
+      "bytes": 22351,
+      "sha256": "d3a694cdfe56e9a490051bb438b3f59774309fe5b0911258bee83f2442fe06d7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00295.jpg",
+      "bytes": 20702,
+      "sha256": "9b56bafdcb20d0a7c8a03a52f7dfe73a0dab416f31f6d070e9aa436dd8b427c9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00300.jpg",
+      "bytes": 20496,
+      "sha256": "3b6d524c3b2a7b3c56469068b5aae2d16192f8a25ca3e3e23a9e6f79ebbe972d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00305.jpg",
+      "bytes": 21104,
+      "sha256": "fe5b208427544dc2d577eb161e33fa7b774ab8fe61c33df4e8cce09382b8d721",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00310.jpg",
+      "bytes": 21216,
+      "sha256": "2bb8009ca58a9c94470d4b040690d6ae4b927ac7a5b70c3d292c09dbccacc931",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00315.jpg",
+      "bytes": 20762,
+      "sha256": "b5a430bd2c9e83342bd33afe6d0e34ac98d85143753a203e1e8278e70a339642",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00320.jpg",
+      "bytes": 20142,
+      "sha256": "cb0f645bf9094428da2a802d331481e686af81c34c7bfb9f6a3a379b2f526592",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00325.jpg",
+      "bytes": 20073,
+      "sha256": "00db58adbf8f229ea1e5e5b978583a5661563fb6f10c3a2e9a8ef80d0a0a2377",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00330.jpg",
+      "bytes": 21096,
+      "sha256": "be68838331274031c88a8235f7c86a43664b58bbc74b68e4eee71211300c3f69",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00335.jpg",
+      "bytes": 21910,
+      "sha256": "0f6e9ec67e6edf649b4e63cb83c77b0a01443652149c5258ff338314e7f20b5e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00340.jpg",
+      "bytes": 21626,
+      "sha256": "3238c8fd20e8637f71d13ce14d6b3d73572cd8da4cdc5ed58bcc0690b4e7025d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00345.jpg",
+      "bytes": 21428,
+      "sha256": "c8f38404403c1c77cdde7dd60d45d7751e30fe9462e91903fff44f11c238d177",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00350.jpg",
+      "bytes": 20712,
+      "sha256": "9b8b37090e7eae179128ec2b9971395ed7c4b3fc0a5e3b3f0b14a887450b3d21",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00355.jpg",
+      "bytes": 21255,
+      "sha256": "9088e72ad6c591b59f0a093107b5fa17fc874eddc9f5a2565f4e99d57f24d265",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00360.jpg",
+      "bytes": 21001,
+      "sha256": "12690ef1d1dc82a5691fd29a67bffe368727dec22b29c674975dc620d6ca66be",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00365.jpg",
+      "bytes": 20872,
+      "sha256": "7451328fd557509cb15e288d0ccd260e16fc646e07217e9d7e7e1e6a372bde1c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00370.jpg",
+      "bytes": 21096,
+      "sha256": "f3af1f88d89a19f2b4e46fbbe1c78c6e4734d00444ce5d18c30f3c2d665b5f1e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00375.jpg",
+      "bytes": 20389,
+      "sha256": "e1dd0982d85ada0e77f6e643187b3e968394d532241aecaa5bd0fe275154a2aa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00380.jpg",
+      "bytes": 19292,
+      "sha256": "a9834ade0cb244619327df751d40cada1c68e26fe4e20a9aa9aed573d13fa52e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00385.jpg",
+      "bytes": 20218,
+      "sha256": "471e16639d3210770515949ab9ef1caf0b7edc0fa1290ef53741ffcd4ff65d31",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00390.jpg",
+      "bytes": 19007,
+      "sha256": "abbe087df8d2dc7d35a7a437e43a3084551dadfd90a24ac1cf8f15e014021288",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00395.jpg",
+      "bytes": 20017,
+      "sha256": "b9e5b8cb83805896aa0177fdb69174de8a1b63a8f1e23ef3c46235bc0833a1b3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00400.jpg",
+      "bytes": 20086,
+      "sha256": "ddaa446863612cb6a2ebc378e708456ef1276ac966960a327a21e11a29df9180",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00405.jpg",
+      "bytes": 19825,
+      "sha256": "0e69c9b93981cc689eecbb10d64ae35208022e951df1fb7e13eca5c6857dd4d0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00410.jpg",
+      "bytes": 19449,
+      "sha256": "f099262b4f54b2e179c27702925f55b7dfb0d96b81ba3164e62d70a114660d68",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00415.jpg",
+      "bytes": 20065,
+      "sha256": "12d7d484a4c942086e973c4fe02b13e905104d1886ec68693c865fe62392930b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00420.jpg",
+      "bytes": 19904,
+      "sha256": "e3750fc4d9ad953daa331ffa619ff4dfef6bab6c7ff6631f5f90079aad9b7d59",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00425.jpg",
+      "bytes": 20544,
+      "sha256": "1c254940fbbfdee4420df5d7f66dee477159066e8fd797744a19e2bd40dd424a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00430.jpg",
+      "bytes": 21071,
+      "sha256": "b47df959f009c4ee4e7874779d0211bd385ecea1fa0e69a10e12de304d1d8d60",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00435.jpg",
+      "bytes": 19666,
+      "sha256": "1e91ddeef986793f663de1d2b136e86e75772d1240cd7bb9ab81f3ff7bf70db9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00440.jpg",
+      "bytes": 20991,
+      "sha256": "749c3fc10a98fe8b38707c458ad9da7e54a87cc0e784601773684bc1ab192426",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00445.jpg",
+      "bytes": 20491,
+      "sha256": "31a9a81a87bd11f2e6f6b628918dcff6f30b54655ff02089cef6cbf0c270b493",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00450.jpg",
+      "bytes": 20835,
+      "sha256": "5190b8da5481c631e1c93128b1b7666c031a996d09b4bb1067c2db0a1df78c81",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00455.jpg",
+      "bytes": 21202,
+      "sha256": "dac0f01e53c10b26e648cc3137ecee95245ec2f64003121c5cc4fa4467966d00",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00460.jpg",
+      "bytes": 20756,
+      "sha256": "1d1e9e9915b5866b05a0b74f75de7419b0955da12124174977894480c08fc07d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00465.jpg",
+      "bytes": 21211,
+      "sha256": "4f1df3d2b863997abb510de049040cf3a71bf82a2425f770693dc3156c10bf5a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00470.jpg",
+      "bytes": 20383,
+      "sha256": "7bd717695a5da96b0bd5e054a12c3bccf8960397866a882e7a083a05a6c3db9f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00475.jpg",
+      "bytes": 20539,
+      "sha256": "8396074fa8015aff678e1189c4cbc3c1c01e753d8b7394e01ac90aa0ebed6e25",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00480.jpg",
+      "bytes": 20900,
+      "sha256": "7e2df84394ef1c1f7897559cadc0dfce66fb6b463c16abd716d45d80383237f2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00485.jpg",
+      "bytes": 20922,
+      "sha256": "ddec69173ada363ec6df276ddbf51f7a847c73ccbf931c64ed0b07125e9b2172",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00490.jpg",
+      "bytes": 19733,
+      "sha256": "f406cbdc1fa2e7153636c9d19b65f08e742ca527b90b89c2b144f5d75a729481",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00495.jpg",
+      "bytes": 20747,
+      "sha256": "5b60aec9ef44a640413f6f679e0e0b1953b7c5290ad63efeca3d096c7c3f32b1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00500.jpg",
+      "bytes": 20611,
+      "sha256": "57acef8ae18993eae408acfbd89ce413d457ad8a90b3c9aa8726d80c05e58031",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00505.jpg",
+      "bytes": 20675,
+      "sha256": "7bcaed8df1727cedd2f54fde725504e160ebb841dadd0d0c859f641dccb86c6e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00510.jpg",
+      "bytes": 20200,
+      "sha256": "a29caad7eae1c571bcd916c4973ae7c1dce18896c7aa6cdca7126b81986eef22",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00515.jpg",
+      "bytes": 19605,
+      "sha256": "70bf78ba2ef586ea00921dff17278ea35a4dd2dee0a58b475e44c7ef0ef0c305",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00520.jpg",
+      "bytes": 20291,
+      "sha256": "f904ae98039b4f71979bd5efc33eeb2f443ca64e3e591028df6e49e390513be0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00525.jpg",
+      "bytes": 20772,
+      "sha256": "116dab3d5f5d56f566ae14263409869e082ac1a19021ca6373203236f640cbb2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00530.jpg",
+      "bytes": 21604,
+      "sha256": "119a7f80d223095b9a1898520f44d0d176a5e5ff072921cc17eded1a21e9bec6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00535.jpg",
+      "bytes": 21035,
+      "sha256": "a8d1e7c33a652cbf7105975e569a9465d812e14863897f5bdd04f9d587ba9dcf",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00540.jpg",
+      "bytes": 20765,
+      "sha256": "aaacc5a2508f60a7cb9c82cc74c442105c1067f8ec75c3c25ebe2ae177688ed9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00545.jpg",
+      "bytes": 20484,
+      "sha256": "d2ce357564cdc5e1d41320698cb435aeb05a597591cdb241ac14f75c10efdf60",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00550.jpg",
+      "bytes": 21078,
+      "sha256": "3a737fc3156c4ec600a30181a0a24f66c6b5771d29d591acf302d47ca805fab9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00555.jpg",
+      "bytes": 21056,
+      "sha256": "503b76f146496cd891774d3cd56b62627169442b95dd50205d305c7e6cd31fb5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00560.jpg",
+      "bytes": 19319,
+      "sha256": "263657207529fb9ffb156810beb353e0d74e17f08a71227bb262a2443cfab1ee",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00565.jpg",
+      "bytes": 17572,
+      "sha256": "4f3e647ad21a623cb8eef338352dfe9d7f02cd81706138e702a75c432d911d70",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00570.jpg",
+      "bytes": 18445,
+      "sha256": "fd421d1a3d5af9b212a60bae0b7d51193d91ee3a554f680a324bd19e0028ce91",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00575.jpg",
+      "bytes": 18599,
+      "sha256": "ba1f66e39d2ce1fd3d241bd544e7511ad640c4f24535573773821b4709049c87",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00580.jpg",
+      "bytes": 17691,
+      "sha256": "86eb534a7bbfe1681e759970cf177c26b12a510941ba1386d1fb5f493ccd1b0d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00585.jpg",
+      "bytes": 18205,
+      "sha256": "23b3d6e6270eab9225500b70afa44fcd501f2c11e64a34276b88df6f3b1f39a6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00590.jpg",
+      "bytes": 17795,
+      "sha256": "86f597a478a6f1278f075bab17511ce28bf333f318cff6cd77f238ae987ff3b5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00595.jpg",
+      "bytes": 17160,
+      "sha256": "2715ee2ec5ede34d3fc3a3d39a2525303db6d277f9ad5e5b83d54315f858005f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00600.jpg",
+      "bytes": 15695,
+      "sha256": "65a478619715678f49eef7b38b3bc76f66b0fd89e253b3abcd2a2727f81fbeae",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00605.jpg",
+      "bytes": 14323,
+      "sha256": "22a631dcfd1a6993a08cf4dedeae3ebb6b175f0b0c9127f9b7b8930681860ce8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00610.jpg",
+      "bytes": 14474,
+      "sha256": "cf90c1bbd40b9cf8cb5498dc0f93afdf1c7a9846b99212ce65730e96fcbb688a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00615.jpg",
+      "bytes": 13948,
+      "sha256": "e078d6fe5a1b0667145ead1025d6cd561510e793e84670383fc69a874cad019c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00620.jpg",
+      "bytes": 14227,
+      "sha256": "162438c499c0e13d7509c57cf17c4b70ea77940bcc2e2fb2dea0a2a9a9855470",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00625.jpg",
+      "bytes": 13945,
+      "sha256": "f7c06784fb487730314d07414f19271d404fb7d238a55b01e52aa46aa31d92b6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00630.jpg",
+      "bytes": 13713,
+      "sha256": "2ed4332c868eddd53e1b4c96530f61e94d5a7c8cad637916c444c2b3fab19e1d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00635.jpg",
+      "bytes": 13220,
+      "sha256": "7f6398e0f379279b3638f848b20475377fb466052c0f78baaf46c1208c85bf08",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00640.jpg",
+      "bytes": 12817,
+      "sha256": "aa3a194ded1061a73e8935d7a522dfa9f70968a102e9bff13506e66d14a0748e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00645.jpg",
+      "bytes": 11982,
+      "sha256": "820a4f2c2a016a2805ff1f40a8be29e1001371019f6bda07564b004065d0964d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00650.jpg",
+      "bytes": 14597,
+      "sha256": "e3e3e270aa5ac9a077e807fc0f62e2440aa6a270b3f1777c7f1e6fcf518abcfd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00655.jpg",
+      "bytes": 15162,
+      "sha256": "bc78ebefc14e8ab1d9713c9e7bf659df255612d46553fcb151835b11b629321b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00660.jpg",
+      "bytes": 14231,
+      "sha256": "77a8a192d6b746c6dccd7b027acdedcbb6f4e8b46b601d339fcf3a1582c56d97",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00665.jpg",
+      "bytes": 14605,
+      "sha256": "a83bf63a95ba6992158b305725bfdf6a7a1b476f09dabd29c4384940e381843f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00670.jpg",
+      "bytes": 16440,
+      "sha256": "477ab94be05abb5c110e78231851aba80e6b9a84f446fd1c52039a603efc01fa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00675.jpg",
+      "bytes": 18046,
+      "sha256": "f72c691302c205a61232458498056707c9952296a1eac71fc294e41f686e0182",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00680.jpg",
+      "bytes": 17780,
+      "sha256": "1998e3aebceded3c99bd10d9df4b1735b66a311e8c6c1eadd70b2a4ba5d9b586",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00685.jpg",
+      "bytes": 17941,
+      "sha256": "4de4c1f941c6c1a604d702343a0d4af868e626a25aa7872b8edc74c3d91774c7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00690.jpg",
+      "bytes": 17584,
+      "sha256": "24e57bf14a63d0aede152ab6f9783739e4a43269109c37022dae204743658a50",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00695.jpg",
+      "bytes": 17973,
+      "sha256": "bb0a83cf53e508e5489ff5579db44f1ece5664a7c3c43f60a6fbb24c71817076",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00700.jpg",
+      "bytes": 17927,
+      "sha256": "8144fa094fdc73734a4f3980a2049110f4a53e6a01e7aebbe611fe0900eacd00",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00705.jpg",
+      "bytes": 17487,
+      "sha256": "d03a6872a203127b418d50dc8e5b14230cc40a2f6fc245d1c49dfab77fb70ffd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00710.jpg",
+      "bytes": 17665,
+      "sha256": "bbbd7c62339db34ca9de25622219c377c617e13ddd46a1733e82680a7e1a9eb9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00715.jpg",
+      "bytes": 18478,
+      "sha256": "21ee52bf6adc32b68aecc479931405c1042d4ba357f786c10c1d98b4f3ae9e23",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00720.jpg",
+      "bytes": 18448,
+      "sha256": "833bb17c27970358a47e70d72a6a724a587d091690d1dd8072b7da8175c1d794",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00725.jpg",
+      "bytes": 18887,
+      "sha256": "c93f6d3c1f4c6fa683275bff91aad6105204d8912d015cb51c1aa9d3cc2d959c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00730.jpg",
+      "bytes": 17809,
+      "sha256": "f7637338aa9bae7f71b99af6567d50917940c8e1ac9cf3811399d96116e286ee",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00735.jpg",
+      "bytes": 19503,
+      "sha256": "43ab71cbaef59f2c60f48ce2776c22255a6d344c1b5b9acb747a04f4e4033db0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00740.jpg",
+      "bytes": 19720,
+      "sha256": "ed3ddc7261ec4ab0e50f7080fc149d8fbb3e84fe746ada813d000d0da36516f3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00745.jpg",
+      "bytes": 20211,
+      "sha256": "935148474ba24d9f7fdf6259e79512200105684645ad19075b5bc40c9a7b000b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00750.jpg",
+      "bytes": 21622,
+      "sha256": "8cdd4b35e2101e09a32c1eef39eb3eee412f4749e126c4379fabeaf4e8aaaefd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00755.jpg",
+      "bytes": 21653,
+      "sha256": "6b607fdfcf536ecd58e0db8966933f60b098da140572b62e0da7e6e4d1ea98d6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00760.jpg",
+      "bytes": 23287,
+      "sha256": "d13b9ccdafde8a0404b5e323774ae74f487bf0e280e3e29da39f348ddb5fe47e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00765.jpg",
+      "bytes": 23397,
+      "sha256": "e7160ac0038da19d0358777a527de780c11c4c19d850927697cdf7d6305d93e3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00770.jpg",
+      "bytes": 23515,
+      "sha256": "8685b92225d0372e3284920bbef1b0e612c21dcd7785bdcf77db434e3bf399fb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00775.jpg",
+      "bytes": 23685,
+      "sha256": "d419b581a100cfa6dd0a387c2333ebfb6d946ed3dfcaf9bf7e81a40d5b777a66",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00780.jpg",
+      "bytes": 22658,
+      "sha256": "8dc0304dd5dc4ed7f2bdc829dc33b2c6b744776d920f0033b778b912d8e3c6d3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00785.jpg",
+      "bytes": 22342,
+      "sha256": "69359e7e1e4d351331e4b7a49629943e172ac156ecc5509a37379241e9a252eb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00790.jpg",
+      "bytes": 21989,
+      "sha256": "afd155eb46947c07f533d13f615d4db81cd66018b0b6399f54124c6ee01a76a2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00795.jpg",
+      "bytes": 22357,
+      "sha256": "f4820e2232f16f34c0f00469d83f8e594a1498d2bb7cd03e48f2e692cbd83a34",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00800.jpg",
+      "bytes": 21609,
+      "sha256": "bd79bb2803be6467ab7ace4b5c8f53df2e57216ef8b23f59e71aff8395feee21",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00805.jpg",
+      "bytes": 21548,
+      "sha256": "0ed4ebdb15c7d909df45cd9d41de4727046e378fb9b4630b70c4168a7b584b56",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00810.jpg",
+      "bytes": 20908,
+      "sha256": "262bc760563390da78e1f6c83af782d543117d8b4ddbb3a56fed411735e21650",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00815.jpg",
+      "bytes": 20632,
+      "sha256": "9ea68a00cacfa48f76263bbacf58d0c0c0e94298f4b3e11aba17c67a9c29ccc1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00820.jpg",
+      "bytes": 21017,
+      "sha256": "0b081f4bc3f76ca03428879802f706491336290d2017305a2de2dbf42a801b27",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00825.jpg",
+      "bytes": 19444,
+      "sha256": "970e19d1e28501784c677b276f89493200b5bac282906d822f63fe0d497c1b7f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00830.jpg",
+      "bytes": 17251,
+      "sha256": "754a2ee7a9278ab14a26742612172be463cb3c4bb591f3a2e9d6e2e9de0efab4",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00835.jpg",
+      "bytes": 17564,
+      "sha256": "2aaf8039ae8f39eb0da51871927a4a04a8c995a4535339a46deaed06f13d73a9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00840.jpg",
+      "bytes": 18381,
+      "sha256": "221500680ad1da8cc87bf7a995ee1a0d2e34edf0bd3e492d3668b23f82f872ca",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00845.jpg",
+      "bytes": 18059,
+      "sha256": "4b39dff4439136755dcb986265bc8a2314d4a7bfe17bfe496cefd84a00f4e2b5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00850.jpg",
+      "bytes": 18160,
+      "sha256": "151bed845a1bb7997b71fca52ba03e1e24e5cfdb855a5c8d8c83a67c1e3a3cf1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00855.jpg",
+      "bytes": 18451,
+      "sha256": "ce9878e6551d303a489462b47f82a0d006b7795f7feec15fac49d87f225760c6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00860.jpg",
+      "bytes": 18193,
+      "sha256": "713f5ff40048b799ddc24249039c8af657c8121c48abadba38cccc5736d6e815",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00865.jpg",
+      "bytes": 18477,
+      "sha256": "7c0ab6ad8f3474a48e1ff2c4d66d9e3b888acbe74768d1ee05bba637f10013d6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00870.jpg",
+      "bytes": 16840,
+      "sha256": "fb6e986e5ad35bb17399d28e2476f2b9919323eae253dece60ed97c22a8afa03",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00875.jpg",
+      "bytes": 17248,
+      "sha256": "a1310e1678dcec57d30360679be4d99ad756a9e06a22e6547326d86571308733",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00880.jpg",
+      "bytes": 17214,
+      "sha256": "74adb74e99ee0d3cd44231ac75c85803af1c799913262062f450dbcdc8a1623d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00885.jpg",
+      "bytes": 17088,
+      "sha256": "4b39eb070da3e8beefc5635dea575e827f9599817ba255310506874649f673c9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00890.jpg",
+      "bytes": 16209,
+      "sha256": "58c3800b15dd957c63d4249c54af4b6f6a6d67f10a423866a5d02e52aceb66de",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00895.jpg",
+      "bytes": 16313,
+      "sha256": "61250f626a427a5d70cf846be4b7e5451f710b377ed0e6d80f579e66ed7438c7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00900.jpg",
+      "bytes": 16676,
+      "sha256": "92d643b40fb48d251dd21c1706f24d5f6be1d41f463430593f9134e1ba600df3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00905.jpg",
+      "bytes": 15688,
+      "sha256": "c3a18af2ff71289c5c456c6a54464b1ceb40df6825acd14416a562f846f452f3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00910.jpg",
+      "bytes": 16834,
+      "sha256": "3726ec37104aa5ad0b983ff6044089d8aba21fa2834a41500aa4fd7a02e2373b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00915.jpg",
+      "bytes": 17019,
+      "sha256": "b41c177d0f96247b34059cf0f51c2d2416652fdc5cb8e04341cde7d8393c566d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00920.jpg",
+      "bytes": 18719,
+      "sha256": "d6e1c63bced3beacf53dd429b9093905937baf6149b5661bd7cf2c905edee943",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00925.jpg",
+      "bytes": 18951,
+      "sha256": "8e2b2d14d7b597313cc501f1214f4b8b616d198418d5702028ea77bd1dd70a43",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00930.jpg",
+      "bytes": 18412,
+      "sha256": "5e61cd72fd212d8542cc9685f748e0c29bf95d584b3757ae0db4e8aed6fb7d8a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00935.jpg",
+      "bytes": 19427,
+      "sha256": "df4f3b0daa17bf577a3dd3f000dba6f3a1bce021e53ccdc7c11fcfe8543a7248",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00940.jpg",
+      "bytes": 19071,
+      "sha256": "7887c8a9cebb933d54ad62d552aaaca04469adebb451478d4d4b310b9057259f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00945.jpg",
+      "bytes": 18515,
+      "sha256": "e110075415f6466c1188c82ff7705c74d559fc4cfc5787541977944ccca9490e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00950.jpg",
+      "bytes": 18363,
+      "sha256": "3a2f3a409b633eab4d87b00a0ac6e686226fd88bff71455332b40710e7cd449d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00955.jpg",
+      "bytes": 16367,
+      "sha256": "0aedfedba34cf363450a4e26b5f18636758bc5900e71e3b2fe9d587c61cbb87d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00960.jpg",
+      "bytes": 17188,
+      "sha256": "53d9c5cc676aa3034ebd7ca7db15070801e042cec327fcc5c7f2f28f414148fd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00965.jpg",
+      "bytes": 18143,
+      "sha256": "a5ca2a3ca1d387195094307c3028b4e0b263d033a3d6627cbc6e25c96e550b85",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00970.jpg",
+      "bytes": 17484,
+      "sha256": "210c577d402f2152a4f012815a0b8933d5e273660de2a9ce710f30258a709e8f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00975.jpg",
+      "bytes": 16544,
+      "sha256": "2b6dd5f167001f004712445ed3efd1ac6f8cca7cf841c83d48b7c39fd6eae6e9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00980.jpg",
+      "bytes": 15508,
+      "sha256": "9670b07a950e0198a0abd5ddfe5e730ad63971c9810bfc3fd77c46d6540ba0d2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00985.jpg",
+      "bytes": 15437,
+      "sha256": "43d04a32a0a5254ee4b2e6e88667423c3feb4e09037f5a4a41129279d2e47b39",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00990.jpg",
+      "bytes": 15295,
+      "sha256": "e5897a35b0bf1fefc15a93cc4c134114499a3c8f5e1257ad06fb148e25f4a97f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/00995.jpg",
+      "bytes": 15589,
+      "sha256": "926e186104ff5db2636993e2656f9eb91a6408d5c94d20ba1cc94742d67c3158",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01000.jpg",
+      "bytes": 15582,
+      "sha256": "4d7f531e59d4c387f1c4adec7669c33a0917dd23dd9a2b94b12267dd8674caa9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01005.jpg",
+      "bytes": 16151,
+      "sha256": "a0080523868a9ca5fca188bcb56cf3baf11f76d66b899d27310d61280d025a5d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01010.jpg",
+      "bytes": 16616,
+      "sha256": "3d305c972ea3448e78978f05677aa85da350d9d255336174b5d73e0bd8b413d5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01015.jpg",
+      "bytes": 14507,
+      "sha256": "080b19d40080dd2ef289521a29aa6cc62cecd6a288a221bb6b533d073d6a7159",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01020.jpg",
+      "bytes": 13694,
+      "sha256": "f8bc277180c5b91aeca0410335e2d84f7404b8937a48a2641822d03a04be31c6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01025.jpg",
+      "bytes": 13152,
+      "sha256": "196b0a76c29c1003d161f9e8233549c01a29d9c97356ff0e5db4aad45eeeef20",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01030.jpg",
+      "bytes": 13536,
+      "sha256": "0add4a2ddbb98e9e9aa2c36bf21929500ed11c82280ffc36db50809bf2f322fc",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01035.jpg",
+      "bytes": 14123,
+      "sha256": "3535184dd48ef10a4e0ea0b1fb152355928d15b401a0a620b12ea81769261cfa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01040.jpg",
+      "bytes": 14789,
+      "sha256": "523b26223931ee8d20cda7b1eaa7566a07cb8fda24431ae8adb5585d03c7faed",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01045.jpg",
+      "bytes": 15197,
+      "sha256": "32f36775f6d89f7136d1dedf29868977a03b37afb89fcb0d5fcf6c32b9e5f1cd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01050.jpg",
+      "bytes": 14793,
+      "sha256": "1c578b7cdc9339849feec563814b66d9bc1564bb6d20333b2edfcc7edb950b15",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01055.jpg",
+      "bytes": 14210,
+      "sha256": "2d2399c4a1a2bcbbaf43aa6734f98a298201da6b32dcb3b144f62f4428011951",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01060.jpg",
+      "bytes": 15034,
+      "sha256": "3fba1d9094971f3725ee277596b36e21772a01f8c9851eaa2c8c03cb6eaba8f1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01065.jpg",
+      "bytes": 15234,
+      "sha256": "d114269374a504e4570173c8e56933d31c64c13da3ab394ead581b3c42290396",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01070.jpg",
+      "bytes": 13603,
+      "sha256": "7d62a1d68360abeaa6d6781c975b31bd5e4d0629ae9bd4a4906604f9d721f42d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01075.jpg",
+      "bytes": 15759,
+      "sha256": "8cc301daf5122ffaf340d12b1a0d36e16df4b8ee2f1038fee682250fe688a578",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01080.jpg",
+      "bytes": 15949,
+      "sha256": "262d75211a0d1805779fb10ba9cada8c6f40fc3ebd977eb4753bb60cbc00ca3c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01085.jpg",
+      "bytes": 16746,
+      "sha256": "e3657f1e0c55452e5889893b9f72fc101922ba01d8a4e8d54170aca3df083d52",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01090.jpg",
+      "bytes": 16764,
+      "sha256": "8ef9a1526193aae18461cf98eaaa3117a54649c43b155e053c19815033db10f5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01095.jpg",
+      "bytes": 17347,
+      "sha256": "68842f12bf17d8158d2756b63054a883c6469e89af6112b9e417f6bb3bd57e48",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01100.jpg",
+      "bytes": 17092,
+      "sha256": "040597262700aa648615c48cc798a8eb7a64d8247fa1b0682e842be85ee5c412",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01105.jpg",
+      "bytes": 17715,
+      "sha256": "cfe2ac7f39ce3e437e7c1d123809e73f38c13f22be8a96f9b00cb26c38c40bd9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01110.jpg",
+      "bytes": 17181,
+      "sha256": "b7a673de3cad0485810fafa24981f288404397192e6ceef0e5e50c60baf213bb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01115.jpg",
+      "bytes": 17372,
+      "sha256": "4b616d1047bbc887f5fe8f2802536ed64d219d48cdae59409ec867ff1904a9e5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01120.jpg",
+      "bytes": 18267,
+      "sha256": "ebc458d1f92cc8b7044930d09da5c54b93f383c28742b33bed664a72242e3c10",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01125.jpg",
+      "bytes": 17831,
+      "sha256": "4ad2232fdd2b827777cdeb4f31f95ed0eb54d2eecbf47ba9607c7dd6e09b51cf",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01130.jpg",
+      "bytes": 18221,
+      "sha256": "bda3882650e44316066e86ee2d2bd470c64aef40bacab68455d5d687fffe838b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01135.jpg",
+      "bytes": 18616,
+      "sha256": "1c0616d21b60c75bf31cacc5ce89519abfcc07858682d5ce87c87539e53147f4",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01140.jpg",
+      "bytes": 18344,
+      "sha256": "e0520447a4101f1da2261a29d58b74aa7d602e139c45b22bf29b6db136e7fca6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01145.jpg",
+      "bytes": 18094,
+      "sha256": "7ff8ec10abc8cf5ab6b0949d05353c1666d235d09487c263ed97c35549d6c665",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01150.jpg",
+      "bytes": 17964,
+      "sha256": "22cd557f346ced4d074e9af58ea4d104377d0dcdd915436b77b7d350c6023b70",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01155.jpg",
+      "bytes": 17167,
+      "sha256": "03534ac2e26ca6c60f72a639a7f6ef83e41e1385f18702f5c509f0b7faebf998",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01160.jpg",
+      "bytes": 16901,
+      "sha256": "f1874dcbf8fb521359d67acbf566f34044eb48ae9afc4f0db6f8d637ee5dbbd7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01165.jpg",
+      "bytes": 17503,
+      "sha256": "3d29c58d34ab0adf4af4579043a92fdb7c912036d39005c769e65655b4b5c593",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01170.jpg",
+      "bytes": 18621,
+      "sha256": "67a765da7b7c7992838a1fd4e91bbe56f4d2e383c9aa54c323546856c3841cd0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01175.jpg",
+      "bytes": 18798,
+      "sha256": "4a5090bcd144d852f419416e95355b4149081eb61f586a0f2b5dac0fce9c9c1d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01180.jpg",
+      "bytes": 18092,
+      "sha256": "8a0c32c5f781042363a1715a3afefd2dcc5530b2e59b3cf31fe03a78405136bb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01185.jpg",
+      "bytes": 18087,
+      "sha256": "a07a5f205a84af47ba2f0e983088baa5fad4eaba72f2dad2f23927dad4460ee9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01190.jpg",
+      "bytes": 17598,
+      "sha256": "c60c12a99de9791e611a01258f4dd07fb191d12e47be3975c423e7eaf46a7eef",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01195.jpg",
+      "bytes": 18804,
+      "sha256": "5ba699b760f0e07c0b2fc8f26dc6f91cec587aa3d169cdd1b0045e6442264cb1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01200.jpg",
+      "bytes": 19131,
+      "sha256": "1532669fc3cf52b55cd7aeee876011c78608bf1cba5a0073cf1641de62fe4137",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01205.jpg",
+      "bytes": 19180,
+      "sha256": "d9bc839dda66864a0dcc3cea1d0b331d23a8a21bd3fd51c7ea6a30890c1d465d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01210.jpg",
+      "bytes": 16620,
+      "sha256": "63c7ec926d65007c39e1222ffa2297ec143d026dcc156c9b77327663ef39a241",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01215.jpg",
+      "bytes": 18000,
+      "sha256": "6dc9136425c47dc2405b4c41cd083352f84b7fe3eb24f9b8b22857f2ae753397",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01220.jpg",
+      "bytes": 18757,
+      "sha256": "6b02fc0be44b82e0a82198f2778a01a21dea1de968fb88fff0f3b59a261917ef",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01225.jpg",
+      "bytes": 17543,
+      "sha256": "628839a7089253e35ef6eeef27e597255c53e5c9674be8b3d160ddffb21c6fe1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01230.jpg",
+      "bytes": 15359,
+      "sha256": "01b5409e23ea076c16803bec307b1f82993ca10791dd4be7350578918ef991a2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01235.jpg",
+      "bytes": 18079,
+      "sha256": "308d076b6aebe850ad8917344db8a4d0a98e6e0002e8e0e4ca6447136e166157",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01240.jpg",
+      "bytes": 17633,
+      "sha256": "fdfeff011f95f7a6a1760791ed334416f10ab30fc3110cfb528031be372b1308",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01245.jpg",
+      "bytes": 20629,
+      "sha256": "b49e2027341871a96c823cc74cf1705612fff0ec3dc9e6ae334eaef020fef654",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01250.jpg",
+      "bytes": 20142,
+      "sha256": "7360ee68dc2d876a4a57f5ce9bd519ec111940a4066b2d4f11e361c7103b23bd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01255.jpg",
+      "bytes": 21191,
+      "sha256": "b7e8c95cf3254ebaa757b7dc80ea34b23bcaa0b788f5c58f09e3533baf2c0eaf",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01260.jpg",
+      "bytes": 20617,
+      "sha256": "17d28a52e565b81e171febf20f1daa7c2c548c0e86d7f409da0a24b099cea0c1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01265.jpg",
+      "bytes": 21192,
+      "sha256": "3c42e222463c434e139f99b612b893a9f86f4e7e189d34056177b9d633bc156b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01270.jpg",
+      "bytes": 20560,
+      "sha256": "b2205cd5d602f9cb413afd7e6e04020a84ec10e89fed3c6d2cfc933aa86efa61",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01275.jpg",
+      "bytes": 21118,
+      "sha256": "6d7a09c43f0f8a37c98b61afbe7d5f33149a3a0a8c62a7f1a4111006364e84e2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01280.jpg",
+      "bytes": 21910,
+      "sha256": "b3dfea4eced09a732d26104d6a4da3c3c49f99cc4d7d90e5f8960a1a78ba3bc9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01285.jpg",
+      "bytes": 21394,
+      "sha256": "6ea7debdc698e2c1395792e6299446d3f16f5ab162fb1d116f98f9c81a11addd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01290.jpg",
+      "bytes": 19807,
+      "sha256": "91dcdf9a22213d64d8dd7e88912a738631fbd0c75aabf189e9e5c305b3f1beb3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01295.jpg",
+      "bytes": 21170,
+      "sha256": "1982cb8a48eb8744cbf4e1616b2857f8e09b90cf9c1ce64e4c837ea526b6765e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01300.jpg",
+      "bytes": 21664,
+      "sha256": "f9d875d35e04554a742d9495a90a30d6e56d174b6bcdfeca0ac745e1a49e9410",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01305.jpg",
+      "bytes": 21704,
+      "sha256": "3ff11454dad604fdd08c6ffbdcb68abaee31eaaefddb2be51dba70652eeb75cd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01310.jpg",
+      "bytes": 21754,
+      "sha256": "48b4985e9dd22b3c735dbc34c95d54c2ae494ad8488fa4cb87f09225466fe3f1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01315.jpg",
+      "bytes": 20732,
+      "sha256": "6df5820563730029ddd521684c4425e0f5bcb7ac9cd1acf5f789ef5ce60d313d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01320.jpg",
+      "bytes": 20293,
+      "sha256": "d122a5a8bff03fb284bc22e3ee1351942b64a9b26eaf84aa9369bd2318f02486",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01325.jpg",
+      "bytes": 20773,
+      "sha256": "6ac35f17289e577818c6acfd1dc77ece5d0f4a36215544628b1614060e238226",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01330.jpg",
+      "bytes": 21237,
+      "sha256": "115fad28ab92383da8631c4c9cafd169ef93a34043fe82e886949e7857ea2235",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01335.jpg",
+      "bytes": 21378,
+      "sha256": "18a6595cf0ef53b9cf80a0cdf3f30294a9130e5ecbcf07cb20be70c50021207b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01340.jpg",
+      "bytes": 20964,
+      "sha256": "da823964290ea0a48e1ebd2bed825b94e17fbfdd9f8af5c9526bc54e3a3880e6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01345.jpg",
+      "bytes": 20591,
+      "sha256": "96b8d9a356c9e0b83ad28a0b751a68f8df9574bffa169d568fde1b06ad360eaa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01350.jpg",
+      "bytes": 19704,
+      "sha256": "67b6848326ab34f92d97ed26a9e370665ba5200eed606b6d1e1a46bac54fe924",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01355.jpg",
+      "bytes": 20462,
+      "sha256": "fa9c14d83fa8b4f0bc08a07da9074615efc0bd03a0f93570ee2a750cb569799c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01360.jpg",
+      "bytes": 19621,
+      "sha256": "1212ad02a9d104efdd9fcb44482be7d844bb6714b75ef3b18eb72fe83f05ef46",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01365.jpg",
+      "bytes": 18926,
+      "sha256": "e77962061d896e3a442e7b96bbd20b4c6b65b7d80a166e47f116e33756ddcfa8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01370.jpg",
+      "bytes": 19187,
+      "sha256": "585f6019aaaddea6f7baa0ab56564d9b1496fcf1a662d50379a3af0fee11ce22",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01375.jpg",
+      "bytes": 19535,
+      "sha256": "50ef5b17c11e62be35e331042e61006b26dcfa92e1ffe16279f220420260cd35",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01380.jpg",
+      "bytes": 18519,
+      "sha256": "08fe8d7fdcb47c41e7dc54d2fe8a7c0bb00c9f76e1bf3df44c808d42705509aa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01385.jpg",
+      "bytes": 21887,
+      "sha256": "7c3b5442f9e1a3211c979c39da80a3d10576dd59fbf25f7d68365bdcc464afac",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01390.jpg",
+      "bytes": 20569,
+      "sha256": "bab5893a54f6365f3b98a7d40bfa9e5c83828922c7dc3a042c4fe248b675e720",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01395.jpg",
+      "bytes": 20692,
+      "sha256": "524463f0597a494923334d698b6d873ae23fcdb61996c6dd8fc22f364e307564",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01400.jpg",
+      "bytes": 19535,
+      "sha256": "d46141d0de90ef594cd22efdb11be347d8fc5c8becc3ee446ae1a17afd04acbc",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01405.jpg",
+      "bytes": 20484,
+      "sha256": "8e0ff788cad913a0046a7716f86026d760503de0b2b4f8a8f76c733441f4075d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01410.jpg",
+      "bytes": 20598,
+      "sha256": "660d0806db1ee8420ca61e31e4b882d2c8ee1470a3016968ac161cc07b43c2dd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01415.jpg",
+      "bytes": 20256,
+      "sha256": "68c7edd9a2beb8c87c15ebba839363e31308fbbd03e094b0730a166ccb07e10c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01420.jpg",
+      "bytes": 20043,
+      "sha256": "8820eb2abed369866a8c31ce1a780ea63c1b051c110535eadf612a33d2865e71",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01425.jpg",
+      "bytes": 20196,
+      "sha256": "0144c2053301fa7294dfb7a1fed07827107ac1e08d79b3aefb29a29f0cb684f9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01430.jpg",
+      "bytes": 20365,
+      "sha256": "4c298d8b3e242191b243d8da845b85a6c96e701eff30be4ee7c7cabcf1e7d5eb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01435.jpg",
+      "bytes": 20073,
+      "sha256": "1bbb69d3da8436cc4b4ef1f1715338ee29dc0f7fb27631695b356c80d1e59dc3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01440.jpg",
+      "bytes": 20283,
+      "sha256": "9a084b1b07bcddbdfd5e42fc4610e925e32feb41317f5b0ec27d1487659fc756",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01445.jpg",
+      "bytes": 20426,
+      "sha256": "b7be585d816d09f6cdb44957208118653269e56297a999550af523e4168c2397",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01450.jpg",
+      "bytes": 20196,
+      "sha256": "894243a6c8655d670c39f2ac8b96e5c1ca59a406282e425cb1b62bfde9c72594",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01455.jpg",
+      "bytes": 20485,
+      "sha256": "46d298f8c671cb3602e4c170dcfcf2ed60cb615d55a8e06e831272f73324cd0b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01460.jpg",
+      "bytes": 20726,
+      "sha256": "68001409826563e65bcf1855539abe91968530d75576386f2008d90e3b607bc3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01465.jpg",
+      "bytes": 19971,
+      "sha256": "fde0180be337163e33e983cb9e1537d19291268e6e5ff09ed7d71d78b212f10f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01470.jpg",
+      "bytes": 21154,
+      "sha256": "054e9735393f1f7991fedffdcac30819c95a70e29634fc4cc10687741d816be8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01475.jpg",
+      "bytes": 21456,
+      "sha256": "7df879d69382010dfa5350c23ba9854f54bfbcf61447cc3aeb33d50c28448272",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01480.jpg",
+      "bytes": 21257,
+      "sha256": "a24ed24aae09f673d108d081e9965f35671c12a2dbd8d12948e39e7b37da7790",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01485.jpg",
+      "bytes": 21629,
+      "sha256": "261e422021d64f9bdace38638bc5b9ff22a3393ecfb1460bcbec573f20e3d467",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01490.jpg",
+      "bytes": 22225,
+      "sha256": "4a84b48b9341201b7ace8f61559cc5ed92c4891aeae376a6f7d26b27d44cad69",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01495.jpg",
+      "bytes": 22358,
+      "sha256": "d271e0e9687f4b3da757b9e03787ec36874f58a856a293df328fd0052f954c52",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01500.jpg",
+      "bytes": 22245,
+      "sha256": "699f387922caac9572bc4cd392dced747b1c10106c6ce27a893be9fe24d69f98",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01505.jpg",
+      "bytes": 22448,
+      "sha256": "77bb2793d5ef4555f7e42df003e1dea30602c2f51123dd89a28f1178bd0a19a0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01510.jpg",
+      "bytes": 22582,
+      "sha256": "3c12c336e0312ab8ad0cd4328813cb8202fb82c0c44be3c3fe32394cd7174ff7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01515.jpg",
+      "bytes": 22880,
+      "sha256": "d3a6a5988ad386613d9f422fba40493c07717e659b5a571ca031f8c8f0e1d04a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01520.jpg",
+      "bytes": 22644,
+      "sha256": "e123125c99ca56b6b93336c9fb6984960712e4bc881d19b5d33e6c033841928d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01525.jpg",
+      "bytes": 23133,
+      "sha256": "42149b1c565e6623441f1bdba91f64ef5944302acbf5fb45a36418423d73d916",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01530.jpg",
+      "bytes": 23068,
+      "sha256": "54d84dc1a367e38cff464f8101a138497b9cb14711cadf6f036ab66a51be8047",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01535.jpg",
+      "bytes": 22883,
+      "sha256": "a85df02b281116de2cd5c70848a5401d309820366ed617eae36d692a118dbf91",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01540.jpg",
+      "bytes": 22177,
+      "sha256": "6baf5fcc2f9470312e11860c1ba0d56de8bcabbf42bfe16f9304de0998a3f88a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01545.jpg",
+      "bytes": 21079,
+      "sha256": "a3fd498daefa74928788c9dd00c12cdbeec7aa3b234d09ac425c4b92f10be514",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01550.jpg",
+      "bytes": 22137,
+      "sha256": "24f0684c0978586a1eab7ec7abd1613fb9c9142876e97747bb8d1dd731bf8cfa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01555.jpg",
+      "bytes": 21163,
+      "sha256": "c2a3d11281b8b64d2152a3602b053e24edfe084708a1bbf62d4ebfc5ff0d7d28",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01560.jpg",
+      "bytes": 22462,
+      "sha256": "b015f6899e267a4ab509d1df2329ea05a46753cfe64ca224c5353f0e940233ba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01565.jpg",
+      "bytes": 21268,
+      "sha256": "121d225d3769f610c4c85c8a707322a1c4a15c5a17ed9513d35792086bd5b138",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01570.jpg",
+      "bytes": 21384,
+      "sha256": "d422b0bc8ce2ac4bdebc61c98475006d7413e43383e0f0969c588ca858cbdb55",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01575.jpg",
+      "bytes": 21680,
+      "sha256": "506fb637f8121bc2039d13cb1dca927c7f8d3662ebdbe40266e5db35745ce039",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01580.jpg",
+      "bytes": 20859,
+      "sha256": "00c2dc74c25062e503ba6fedbc7d9f3f8c0af6cd0d941073c7f0a41eba0204a1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01585.jpg",
+      "bytes": 21492,
+      "sha256": "164613ee2aaa0b0d5ff4fa6a4c2721b88c4c57dee7968821296a6341a21b304f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01590.jpg",
+      "bytes": 21842,
+      "sha256": "c728750dce5133683585685b6f8fdda738be92f6f1cf3a58bc967c9e5ef0866d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01595.jpg",
+      "bytes": 21601,
+      "sha256": "3288b40eeba6c28edf1e9bdbaff1483b1def421202a54d95e18dfc8372692f82",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01600.jpg",
+      "bytes": 20602,
+      "sha256": "44e7f534ffb7a6a2e2a8d27547dbc01fa9265682ea6e9989a7c2fd9e73d0aeef",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01605.jpg",
+      "bytes": 20834,
+      "sha256": "53b1f929478344962f0b374ea44a0f3fba75f47e3a82514df81db7f96b328de8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01610.jpg",
+      "bytes": 20672,
+      "sha256": "e249b95e7f99e040cc344fccee66bf5ba357790f575d56e2f1cfc2b52ec3e367",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01615.jpg",
+      "bytes": 20844,
+      "sha256": "21e9a4c24353b34926e12387024a085e57e7648cf0f2b13d01f8b33b7a5325a1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01620.jpg",
+      "bytes": 20824,
+      "sha256": "0486f66916e3f420a2015462f8406187625603b9b5cf770bd608a07ce3674001",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01625.jpg",
+      "bytes": 21140,
+      "sha256": "516452a6c74475ead0338dfd2436b1686fff3021592f848a300480fbef258f20",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01630.jpg",
+      "bytes": 21176,
+      "sha256": "76f8f761861d0af3c80f7cbc0515a2e52839ba5ef0163376af313db877616547",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01635.jpg",
+      "bytes": 20853,
+      "sha256": "d39e7b540697d03b0012e0842d2a8ecca74fda5b7747046258f0576f9bf4f0ab",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01640.jpg",
+      "bytes": 20347,
+      "sha256": "e320d4de62a94dc7fec060806f98522aeb416592082abd6dfd2a3f854d06c832",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01645.jpg",
+      "bytes": 21097,
+      "sha256": "39e605ca4391acae2ed97ff11f0eedfd39fdbf419a1e946b8e3afbbe50ebfa98",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01650.jpg",
+      "bytes": 21857,
+      "sha256": "796131074ea8772fde7eb4cfad1e4244814c6b8f6a68b9be2f7a1970c39c5030",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01655.jpg",
+      "bytes": 21724,
+      "sha256": "9282a930171a3c53d7a4a96cf0b070d5296db026da6ac453ae791f5368776e55",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01660.jpg",
+      "bytes": 20137,
+      "sha256": "918cf80d3ee249553bc3abcb0f415a99833e80cd323aecd12a7369d220bbf2e7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01665.jpg",
+      "bytes": 20730,
+      "sha256": "de17fcf70ed0ca537607cb2b4ac92e41fbfb1534ef31e21a18a2ec600a5ac7ba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01670.jpg",
+      "bytes": 20601,
+      "sha256": "fdc7fd2c604b2b16e76562630f3de8b9bb31b4875e5713c22f0f334d8144dfad",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01675.jpg",
+      "bytes": 19377,
+      "sha256": "1c23004d90681c54762c70490d6354b8b9d411e74d7dc622369250c5838e7522",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01680.jpg",
+      "bytes": 20601,
+      "sha256": "2a591396efe200b063e722f1a343e5c56e3c554e6b52b043662edc70ca4bbba7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01685.jpg",
+      "bytes": 20273,
+      "sha256": "7d2e01fe4f3fec872b64c853873a9ccb353a25885fa5731a6b779d7ddf2cd1fa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01690.jpg",
+      "bytes": 19772,
+      "sha256": "bbf3a8f88571d9f0765d41c3c511e0dba2bff93ef90f54bdf5f67becec955024",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01695.jpg",
+      "bytes": 20070,
+      "sha256": "7e4f5e5dc5a46b14fef3d7a6a698a9f66221a3733b2f8139ba2b3c298bb0a547",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01700.jpg",
+      "bytes": 20045,
+      "sha256": "e1495fe5a03c9023aac4fb57ee0e878ff3f07eef1ad84f1c8c5d088b1d3c6e3a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01705.jpg",
+      "bytes": 19306,
+      "sha256": "550bc031b0c2f629872cf8b4b9e34119b042309fd26240b7442ba771d28c9ef6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01710.jpg",
+      "bytes": 19425,
+      "sha256": "f93082ab6bcbe03d1bd5d008c63cd0975c14ef043cdaf404dca0b853e5182dad",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01715.jpg",
+      "bytes": 19294,
+      "sha256": "69685d1622d9c74f9e572dec0764ad6e6963cbfa5712a177761cb80d39831484",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01720.jpg",
+      "bytes": 18317,
+      "sha256": "a093936194c09acf8784888160b8a78ceec4d4813dfd827c860856fd8ae39ad8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01725.jpg",
+      "bytes": 18582,
+      "sha256": "c38796352807813858f5fa9ae19ea2098b1bb6e895a6074b2c720370dab21c72",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01730.jpg",
+      "bytes": 18676,
+      "sha256": "3e63c7446a818227fa45eb989993d1094e1bf116397e545c9cee8bf36670da34",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01735.jpg",
+      "bytes": 17832,
+      "sha256": "9b2a1e5c40027eda67397cada43a5bf6de38772e296045987d437d3090e696d6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01740.jpg",
+      "bytes": 16076,
+      "sha256": "78f8c66df652e59f9bd1e9a7f93da9b8b243f02ecddc72fbf79cb0a19ef45b18",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01745.jpg",
+      "bytes": 15730,
+      "sha256": "28c80cdd5ab6c40d25b1eb4d777f9028ce90b085ef56a9a68a364107bb8ae3ad",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01750.jpg",
+      "bytes": 15944,
+      "sha256": "be5d2e0f68d3675abcb3645eabd7d14bb36db9f0c0a6932708471cafd82e3b59",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01755.jpg",
+      "bytes": 15156,
+      "sha256": "8f4abf51e3a045c31adc00e8b35cc5da4cd124d53e20aa6e767f3527a368896b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01760.jpg",
+      "bytes": 15638,
+      "sha256": "d498bc3a9efb77f462a2e020dc2b78d2fffcb103627122096a54647d812ce435",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01765.jpg",
+      "bytes": 15281,
+      "sha256": "884473c1bf7d14c39dc75483504571607af25f35f66a168b4f163d98c40a03b8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01770.jpg",
+      "bytes": 15616,
+      "sha256": "0660116b144a1794f4c02a4a8debee9882085df9f8ab12c9f8eb7f0c82425012",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01775.jpg",
+      "bytes": 15897,
+      "sha256": "421980fe10bc7cf6c6cf21f4b2c719146ab9f5ec5934155c184a7efa136fd372",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01780.jpg",
+      "bytes": 15403,
+      "sha256": "4ca2d29470c89e5deb7f69f9a0634434fb0c53053c9f4c6bfab146ce1b4c7b20",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01785.jpg",
+      "bytes": 14561,
+      "sha256": "27e2eb9e9d46cc162b4f6e4ffa4215f10f6fd0b0b7695cd318297ceb83bebb0e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01790.jpg",
+      "bytes": 13894,
+      "sha256": "10a597fef7fa1b4b1f12c36f99ddf1cadab170d1d431f06b03f919c2b9d8376e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01795.jpg",
+      "bytes": 13647,
+      "sha256": "a188e55746b4cc890cca34b31c940ed90b65f92a1cd386e7bcb6c0b8d87366aa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01800.jpg",
+      "bytes": 13920,
+      "sha256": "08323b2f62c01cba4e8371bf08fc8f3c53ba664224543eb6134a0651b7ff5b82",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01805.jpg",
+      "bytes": 13934,
+      "sha256": "de4d9b7172fd81cf5eeb15345d633826e9a006c17de5e71144f0097a926dbc44",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01810.jpg",
+      "bytes": 14016,
+      "sha256": "ba506fcb50f3e69eaccd8efd57408a58d36433a0273f35ebc25921db8779872d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01815.jpg",
+      "bytes": 13697,
+      "sha256": "2369115546f19f82cf36103e1393fbf40aec35523d5ec5c74c1f434e129380d0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01820.jpg",
+      "bytes": 14140,
+      "sha256": "7b65fc7ce216b1ce5a11e4c64527101712bfb4c0fc3ef983005c3c501d600053",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01825.jpg",
+      "bytes": 13557,
+      "sha256": "c17829a08e3bb19b0352489a5268adc63355ea9f627f3cfe4caf85dd0ffe00ec",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01830.jpg",
+      "bytes": 12810,
+      "sha256": "648254a93d71e092ed0e9fa5566523ae705f3009145f51113d1d504c33d86d0c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01835.jpg",
+      "bytes": 13746,
+      "sha256": "34d85ca1e56b8f6e84feecdc854090cf98a4fabb59f32c6d263ed18dbdc0c7ca",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01840.jpg",
+      "bytes": 13870,
+      "sha256": "6b0359d42468f20069205ed3b52b362e117aa3845c09bd9f947821649d89ee0d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01845.jpg",
+      "bytes": 13300,
+      "sha256": "f31b6df39535d77afff02385919713051e32024519723d651f8dea4124abd1da",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01850.jpg",
+      "bytes": 13387,
+      "sha256": "03f00e5308bc5b3f4aae09d0fc1dd8d4f8eb4bcef52468ee1dbf285c5d62aa9e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01855.jpg",
+      "bytes": 13982,
+      "sha256": "d25fd6272f46d92066d2ec7d67d5918b9bb574639cd11554424d518389b76482",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01860.jpg",
+      "bytes": 14071,
+      "sha256": "9418eb153069a1e3146cb9998baf0062f41ec3eef3635874af4b9b6357e18eb2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01865.jpg",
+      "bytes": 14230,
+      "sha256": "5c8f6d0092ca8644fdb2cab121844a5f3216d0844169e74a5efa0c262d68ee55",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01870.jpg",
+      "bytes": 13425,
+      "sha256": "d0b036fa2958fa37af6fd537967e6e85b75c009907021da15ddf65fe52868598",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01875.jpg",
+      "bytes": 14546,
+      "sha256": "1b7d7a683a59fe2be5a33cc7fada80a7748a61ebc0e7e917d4b602e2730355ce",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01880.jpg",
+      "bytes": 14840,
+      "sha256": "d969f358676741aa14944573c69894ddeef97d05bbff18e20c12a96d6ff9f02e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01885.jpg",
+      "bytes": 14323,
+      "sha256": "f2cdb48165c09a3980e67fe6e3e0c951c3ff7a324cd0f26616f7e19592daa0e5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01890.jpg",
+      "bytes": 15763,
+      "sha256": "6fff9eeeeb8b128d04d6d8568568f03894dc5deeccd5d97a762059a68a8dc807",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01895.jpg",
+      "bytes": 16561,
+      "sha256": "221a482dc95f7b4e0f869656dad5375e722510107c5631ba8930be6efc527faf",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01900.jpg",
+      "bytes": 16591,
+      "sha256": "62f68b987abad8c1a9cceaa7d6caaf47b811c418ac1d8937f07f0fe2b47f3e4c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01905.jpg",
+      "bytes": 17765,
+      "sha256": "a74bc5ad1401fad40fe233b2a36bc1c0d17908b478267702105bd05de9575304",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01910.jpg",
+      "bytes": 18301,
+      "sha256": "ce5e3a5b8abd7434d52cd6b844a5efda5bd595a845637452d53775ef35507859",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01915.jpg",
+      "bytes": 17649,
+      "sha256": "4411b3160658a92d017df818c0136f5493769d9550fac19c6111343ea096f392",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01920.jpg",
+      "bytes": 17977,
+      "sha256": "f9499b166fd205644b7bb09352924ad410fc213a026c47dc5186d14e498f8cae",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01925.jpg",
+      "bytes": 17725,
+      "sha256": "0ec243a947f7eb8ca64b10883d0d5888fa709c7a66c101b5ffea664001b54ac2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01930.jpg",
+      "bytes": 19753,
+      "sha256": "528f4205005a045d367179b6f2ccc91f26123f12abb5909e07298f46bf366114",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01935.jpg",
+      "bytes": 19662,
+      "sha256": "0b59564b15480abe426ee05687d7d237fcab77b5c99599214828bfe4a142a3e7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01940.jpg",
+      "bytes": 19319,
+      "sha256": "a39404da135f81751ebf8c71bbfe5d9c945b420b1c3c3e979c3b47c16cdad249",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01945.jpg",
+      "bytes": 20942,
+      "sha256": "956cb54430d3336c94beb73a8c0ca8ba417f7d61d36b476b41580671471299d5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01950.jpg",
+      "bytes": 19535,
+      "sha256": "2a0a543ee1f55f7cf04f94ef0bed6593197d0c19b96d28511252248b03456ca6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01955.jpg",
+      "bytes": 19791,
+      "sha256": "fdf2fb7b6cf247de8a5c64155515725fd4e4e718df6133e4dde856e4009ffc64",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01960.jpg",
+      "bytes": 18643,
+      "sha256": "bd0aaff339c55c34fcbc9b10f92b1e947118811161fe857b941c789082aea067",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01965.jpg",
+      "bytes": 17729,
+      "sha256": "6d4dcbcfa40d69913796319aff787631dff3992b60a6983e64ad75edb66c1724",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01970.jpg",
+      "bytes": 16733,
+      "sha256": "616edc9bcce1f2750e92cac57a6cd2e11f6b1f89f61ebca5627a994d2c0fa9aa",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01975.jpg",
+      "bytes": 18957,
+      "sha256": "ff2304e66ac794bb6312afb9670e686bf400fbba43ec748bb4a668bc734a1408",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01980.jpg",
+      "bytes": 18754,
+      "sha256": "927c48ac37934d53e050011780870a752c06b78d4ed8992204c5c361710f49a0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01985.jpg",
+      "bytes": 18062,
+      "sha256": "0971591f1ec9db4a04b5f03663fc805a9d3af3f35f744d50b86ab0c738420e9f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01990.jpg",
+      "bytes": 18754,
+      "sha256": "4167f47bc747730c478d8d66d6d6ffe179b1e747d95e5140a150920fb9196483",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/01995.jpg",
+      "bytes": 16874,
+      "sha256": "8d37f355ebbe9f5aa1ad1f7188d81835d9da40ea6809ee665db5a0c0669977f5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02000.jpg",
+      "bytes": 17539,
+      "sha256": "10af5759b4cc2657c6353ff3a27207c4922d0303a4d56f8b53754464aceb669f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02005.jpg",
+      "bytes": 17552,
+      "sha256": "3d7c6a7a4a8963c288225a4e402bd1a0e12075ff5fc70eccced252551fe283d2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02010.jpg",
+      "bytes": 16723,
+      "sha256": "bce59061acc0608b3082fd81bab01bb19dfa3f70f5a5a08bdca8556cc81a261f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02015.jpg",
+      "bytes": 16837,
+      "sha256": "6b7ad0e2d724bd4fa49cf5fe3b0a8fd5d63ec39b0d808d174e02313b9113976b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02020.jpg",
+      "bytes": 16128,
+      "sha256": "0e492beb6eb664206e67f16ee2d9992b01762e3332d60e121c940312feda9137",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02025.jpg",
+      "bytes": 15861,
+      "sha256": "20ff6cce9b69371ff892bf18df288c6b6446a56863cf1d8eec77f7c187866e5a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02030.jpg",
+      "bytes": 15903,
+      "sha256": "e0249f4d6ea3d56de7ddaf765d636dfe5f698a6b6cfd902319f801cdf5f70624",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02035.jpg",
+      "bytes": 15540,
+      "sha256": "50ad52b74bd0c7a23506593de8941a198243f0c9f80a24f35e4be64ae7b46be9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02040.jpg",
+      "bytes": 15708,
+      "sha256": "609d6141b376abee42ef5deaea30b6a2a2d0ac0d6b7a5f7b7ef587ab39755bd2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02045.jpg",
+      "bytes": 14828,
+      "sha256": "e9c72a2950f8c6144947173cb2cbf5da44ca8a80d703d39543792e796d210b6d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02050.jpg",
+      "bytes": 14098,
+      "sha256": "76cbd1204e269dc833d5acf123905c0ccec4b30d081b9314dcd20788c70647ab",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02055.jpg",
+      "bytes": 14366,
+      "sha256": "0d5c2087c2a2b8c02212491f85d99bec6de47811efa6833557759a6f4bd0d33a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02060.jpg",
+      "bytes": 15091,
+      "sha256": "c7d532d5af12f1dd8fcea33715aa22abeae4a52d11a39e25883fd188b78ff87e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02065.jpg",
+      "bytes": 15774,
+      "sha256": "cc291271da6868ec65bd8c84f9d070ab8ba886216bdb5f730186d601c7b6c3a8",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02070.jpg",
+      "bytes": 17064,
+      "sha256": "2100f36c141bf6530878b586364786e2fa2d6202b2e1fca720612f487c1a22fe",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02075.jpg",
+      "bytes": 17562,
+      "sha256": "970806f585b305453572438b292f63339150503198ab20335f87fa054965aa73",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02080.jpg",
+      "bytes": 17208,
+      "sha256": "b1f3f4ce671991c90a7c1c7a7397ed99ece1342caddd94f56dbc584a7aeaadc5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02085.jpg",
+      "bytes": 16875,
+      "sha256": "3d6f56966b795e164e55735a71a616c990d7c68fe520e519351f5faf96220f62",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02090.jpg",
+      "bytes": 17606,
+      "sha256": "81922d081267c1fd3d94936c6c199ceaf3e735354040244dc1e8373eedd1d403",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02095.jpg",
+      "bytes": 17829,
+      "sha256": "e079a14177a7ef9c32cfbc88d6ce15d8b667ce87ad2f5d763c76a5b7533b93f7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02100.jpg",
+      "bytes": 18678,
+      "sha256": "dfa0312a95e50fb160df35a1a546d76f40d08020dbd3a5f8093adddcb7cfce15",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02105.jpg",
+      "bytes": 15728,
+      "sha256": "71347f3034c5e1740452f2ec5bb68cf889bf29517996eec33f30355e19680950",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02110.jpg",
+      "bytes": 16198,
+      "sha256": "12ba80e39065220e186be17d8f215b455989f4816f6f8b310ae035827958e890",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02115.jpg",
+      "bytes": 18498,
+      "sha256": "57abd2a18d0f436f608c03a41fb51170f9bc1e686478be3409d3de77e91f8241",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02120.jpg",
+      "bytes": 19885,
+      "sha256": "66cb49f8c268e03ff22aa20efeeaa0ad2af753f70bb0ffbf10d8f78702825900",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02125.jpg",
+      "bytes": 20090,
+      "sha256": "598e65379c1d7d296c0648781697411a7a1f5175841894a1a3bee4229b34f273",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02130.jpg",
+      "bytes": 19112,
+      "sha256": "6dc0b9537d4d495d0330226a910d0e7c9550fda5f882036ad7a8a2d4fdce90de",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02135.jpg",
+      "bytes": 18075,
+      "sha256": "2b859f70064cadcb9f4e135f3862874a6b341d1fcd8358936bd72d5e23b56611",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02140.jpg",
+      "bytes": 19480,
+      "sha256": "efe6d6c2682aefef1321818c02180239edcd30b0ccbf6d6d523b18af6755dd91",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02145.jpg",
+      "bytes": 18601,
+      "sha256": "eec7530c0c8f9f87f18a5c9ff4483354c93f2c675f17a6609444285dad99cfdd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02150.jpg",
+      "bytes": 19321,
+      "sha256": "e745b28c976f01466aac6a17fcda15d25db2977456b4e9d0a6433bad816e513f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02155.jpg",
+      "bytes": 20286,
+      "sha256": "6f46d687d96e79efdabca6e9f4cb814718a81dee18940182953fe7c7e0830526",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02160.jpg",
+      "bytes": 20102,
+      "sha256": "f95fc68776c9896288c883df0f49fcc018ba7c94605f09ec5f4b28a72d11b7ba",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02165.jpg",
+      "bytes": 17351,
+      "sha256": "e0897a6c394efd08e1ada78fa186ae832db95d69e800f263a3d556e95684a073",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02170.jpg",
+      "bytes": 18542,
+      "sha256": "ea6799cfd24b6af20066a4ce094e351cab8dee7bb9f100ab2e84073d95edfec5",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02175.jpg",
+      "bytes": 19122,
+      "sha256": "94e68ba833f9ba80bc5c4e74b8d2dd68a18d9c6ba069738b4d02642be0246831",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02180.jpg",
+      "bytes": 18480,
+      "sha256": "9ddb3dc3ab4899b5ebaed540c5fe5d4c4315da6be756f6e111d1ef4122d42dcb",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02185.jpg",
+      "bytes": 17824,
+      "sha256": "37bd74f17fcb0de7da91fdb0c9898ddcb74e45387c0a1fd1febc37120a810264",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02190.jpg",
+      "bytes": 18020,
+      "sha256": "8fca024a2de28fc6fcf1cc7d4c91b004b125229260d1e39b894ad53b6f3f517b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02195.jpg",
+      "bytes": 18449,
+      "sha256": "f6c57a16368dd7a027ec025e937e9c429a89cb209fd3fa17b38924bd6d5f08fc",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02200.jpg",
+      "bytes": 19612,
+      "sha256": "04cc27f638c0a8c3e560c94a96c82331be98cddba143925da5b3e4e155c2fa15",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02205.jpg",
+      "bytes": 19754,
+      "sha256": "ca3d780e2fc6c6572db13265a43464f01cd71a97f92a1c63381bf9466b2967dd",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02210.jpg",
+      "bytes": 20167,
+      "sha256": "ebadc69122b13e76564ef33966c701449a33b0487c54159ed93b6c9ed0dde520",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02215.jpg",
+      "bytes": 18569,
+      "sha256": "7ec6b22601adc656cfb52ff4e389df55ada4fb37eabeb0b1e5d481b3fa583a61",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02220.jpg",
+      "bytes": 18579,
+      "sha256": "c2a0e4afed408e6ebe9d5ebceb21d2a3f4e47f501a973ff5da3f8c581640e2b6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02225.jpg",
+      "bytes": 19557,
+      "sha256": "e7c8ae35d1d7611261fe70b759c0ae4044f6eac98191c19eb3f7313af7703ca9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02230.jpg",
+      "bytes": 20177,
+      "sha256": "1a1de55df69af7696772723686cdb24192e9fb11eb9c536143e2a3e9d817e2ae",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02235.jpg",
+      "bytes": 17753,
+      "sha256": "7b6015adab21878acbcf795e88ddf9f0f904373f3d9cb8def6a2fd2fb9d3d2fe",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02240.jpg",
+      "bytes": 17259,
+      "sha256": "94346b1ae5ff6835200328245553bca5eb963696ea10a31ae9a8c5cfb9acfce4",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02245.jpg",
+      "bytes": 19078,
+      "sha256": "8857c4bbd1207d083cefd9fe5730f6043a546aa89010b5acdcb7ae311f4398ec",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02250.jpg",
+      "bytes": 20406,
+      "sha256": "520f72c92c8c1d725ebe2a9420bc470527f3b9ecbdb97ebd78eb3dfbdb4d9121",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02255.jpg",
+      "bytes": 20170,
+      "sha256": "4cfb03c3596de8a0f1470b539b0ec689bb8fbe1c38f17d9439125eeffca908a6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02260.jpg",
+      "bytes": 20857,
+      "sha256": "48420421a4fb991ef3d206244d9e3264237f698673830d8efb545e6dbf687ae7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02265.jpg",
+      "bytes": 19410,
+      "sha256": "c486936c23cc3a265a428a32a81aa462c4d2de38b0535556e794f08f347cb981",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02270.jpg",
+      "bytes": 19176,
+      "sha256": "4986054a2a543453bd147f63fdb0c15f9af3afa357b49626ca37d62b7edfa151",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02275.jpg",
+      "bytes": 19008,
+      "sha256": "8df2a262527514001c7a01ab2e66ea264543cc3069738c07d5f212cafd509604",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02280.jpg",
+      "bytes": 20111,
+      "sha256": "b9473b1b44cd48c96da2e961947843e829e454cd9498891a38494b68b55c4c38",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02285.jpg",
+      "bytes": 20444,
+      "sha256": "5ff2cfa0b5701e82cbb7a6fe161c103d25f429e01676ad270c4f8ba82f6070b6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02290.jpg",
+      "bytes": 21293,
+      "sha256": "2742ffb293c8ea998d8a513a9c407d5c1511830f0da964819125be343901b165",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02295.jpg",
+      "bytes": 19406,
+      "sha256": "8e960f9e14a63b256add6f62e5e53bde20d0ff1553ba455b55cc62c8b04f8a49",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02300.jpg",
+      "bytes": 19772,
+      "sha256": "19c68e3194fc4001d14bd22fa12981209b5ca6429048400bbb7660ce2e2dbf84",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02305.jpg",
+      "bytes": 20893,
+      "sha256": "86fc9afed1c73ce99f506b9495fc0bd8a47bad450b51177a7667b302eddbc52f",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02310.jpg",
+      "bytes": 20025,
+      "sha256": "5dec396a33d2e7df15824a443889f77dd867394b859d4519182594260f823900",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02315.jpg",
+      "bytes": 21639,
+      "sha256": "afb31f54ac4c7d075fb7697cb3975f1cda46574397496950027f8e6abe1c1028",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02320.jpg",
+      "bytes": 21955,
+      "sha256": "ef5f6c73e8ee0ba010e740d411a925b58f3e4ea44823d0204b0fad54b6662af6",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02325.jpg",
+      "bytes": 21803,
+      "sha256": "ab2b03f0377d6f1b8a57b2b90328719d65fe92da83ebe48bcba7e688481be69d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02330.jpg",
+      "bytes": 21791,
+      "sha256": "272cabdcfaea7b8090547ea78b3bfd043cb534b5d8c1bc9f6aef38189ed85436",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02335.jpg",
+      "bytes": 21337,
+      "sha256": "625c6321cb4f28f2c1820414291f1ad8042ee605ce64aed1c254cafd5940a439",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02340.jpg",
+      "bytes": 20846,
+      "sha256": "dff3b25f6eb2e07f2483c6fd0df3c564b94dd281a1b69c0051d2c0751a7c7842",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02345.jpg",
+      "bytes": 21997,
+      "sha256": "5d9d5490bb2d35553c33761a2ea31147cb89dddfabf5b696c3750ecf7734f79e",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02350.jpg",
+      "bytes": 21217,
+      "sha256": "5d26b239f780d1a8462ca8d3d46bb57ab9b9d06263aae97311cac78b338aec9b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02355.jpg",
+      "bytes": 20385,
+      "sha256": "314bebb0a6894f42bf90318d6fc60f6c8ef4531ffcd78fd49dae7f52077f6b02",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02360.jpg",
+      "bytes": 21316,
+      "sha256": "4e8afe29699da62d47057f62441d9031921f411ae965b098d36b965d6f3b64b4",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02365.jpg",
+      "bytes": 20450,
+      "sha256": "b888e5adbebd6ee1f0c25978ca4bf219b7aa3497e09608040803dc48001bb1ac",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02370.jpg",
+      "bytes": 21453,
+      "sha256": "b52e000d91bb16416286a41e770995b3f54d952bd7ffd0a2c61b0271f931107a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02375.jpg",
+      "bytes": 20843,
+      "sha256": "1d686d776af7db6be12561863aac45ab812c2c8c2de7d5d8dccc367674e827e7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02380.jpg",
+      "bytes": 21225,
+      "sha256": "1d84169fe3cb31e79133aacd69896b8bd7a0fcd54be1cd6a720ccff5dd85162b",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02385.jpg",
+      "bytes": 21419,
+      "sha256": "71246907999b668b318f09ee2832ade0dac323aefc4efc8c94034851960b7986",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02390.jpg",
+      "bytes": 21857,
+      "sha256": "8d8c87788337a1dad3272f4816fcf209041917528476c9033849141346096f2a",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02395.jpg",
+      "bytes": 20968,
+      "sha256": "44291672ae34c1187851d7e47d788206b5d311a6b34cf1e23bb140d0a29df643",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02400.jpg",
+      "bytes": 20945,
+      "sha256": "662d90a35a77e695ab95f3cfc2f6ea767e89310080682794845b2c76304caa5d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02405.jpg",
+      "bytes": 19912,
+      "sha256": "fcf37eb6001270f28ab7d0a65c8ad978363941510cafd40836ba2d28bf9834f7",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02410.jpg",
+      "bytes": 20232,
+      "sha256": "6c8c06a0c46d6887fad5281595be21e6c5a866e2d8af55a77b3b04701216eab2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02415.jpg",
+      "bytes": 20372,
+      "sha256": "fd5f2f3bfe7618f016d0c60a8cf28aa297c891f1ff2fd895ce365707e8677957",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02420.jpg",
+      "bytes": 18775,
+      "sha256": "2fddf3d437e48d88e49c10b48027880d3c2c4f7d34483afc0e00010d41006b93",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02425.jpg",
+      "bytes": 20972,
+      "sha256": "dd43ef5e0f649a8066e864d49ab14bbd24698982dc81e7f43375cf9660911ad1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02430.jpg",
+      "bytes": 20828,
+      "sha256": "b2e5ed306d52845a40a342244078216b52d1f50d7400929d974952d0678272f0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02435.jpg",
+      "bytes": 20400,
+      "sha256": "d1b8c036e946b9bf26c0ac6122987a140e1b5c893c6e82e02a4e1abde28ff888",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02440.jpg",
+      "bytes": 20796,
+      "sha256": "6dc6971104c357131f973e0b19cb4e1c8d6920fe8ce15b32d0b909c049cdd847",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02445.jpg",
+      "bytes": 20907,
+      "sha256": "9f556c4a5d60e1d17c91bb0879ca769f71bbbacd9e6c9c12f2500a3df7e22837",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02450.jpg",
+      "bytes": 20896,
+      "sha256": "15a0a24b170ab38057d84889cd59be3d336434b35a388b2f007d5b8ad479b477",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02455.jpg",
+      "bytes": 21077,
+      "sha256": "c2a6d780506cfddaf477d033a14e2ac6880c101eced71ec56aa674de61e21c7d",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02460.jpg",
+      "bytes": 18221,
+      "sha256": "0e4ad93a88ecdc72d5fbaa5a83613c5513758c58f4c7ce367beae7a611691bc9",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02465.jpg",
+      "bytes": 19649,
+      "sha256": "ab14ce54d87fddb6dbdcd3c483d2258976fd7e7ecabf84db4712b81ac0ea0542",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02470.jpg",
+      "bytes": 19605,
+      "sha256": "13f7d0dc5926d4bbb93ed0b8180d00388f364366d1c6ac3607dcd870b5594964",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02475.jpg",
+      "bytes": 20133,
+      "sha256": "d7e9bd77610f0d1bc97576474da17547b60db998f03e16f06bc1cfd967946e35",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02480.jpg",
+      "bytes": 19817,
+      "sha256": "18cc3b15d41220bee0eed3381b35fb50fd4b5160f0ac0c411357a4b7ffb55b7c",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02485.jpg",
+      "bytes": 19146,
+      "sha256": "ba882e461f1668d8a2c5d0d291c05f8890e6e81061e36d764bec3fc0498762a3",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02490.jpg",
+      "bytes": 19551,
+      "sha256": "ec7855830ccb99f7ba7293bf6d1e7708f79ff02fefef502343effa6f9b4ebaf1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02495.jpg",
+      "bytes": 20209,
+      "sha256": "4aa24423def586ecc753e0296630e468fbab3d7ee42c0110fe1210000e133d80",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02500.jpg",
+      "bytes": 19574,
+      "sha256": "7d6e3746069aa1011f90707c36421d28528912cd8771c74c4ef5a1f7234da431",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02505.jpg",
+      "bytes": 19221,
+      "sha256": "76030e6d5852ac7a8e5dafdbe8c31ab461c54943ff7bf926ff52c5cc4f6b5df2",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02510.jpg",
+      "bytes": 19702,
+      "sha256": "6f5cd4b2ed0c4066173fb397a45c8bbd8b83f893c4965d685f6d96b9a03885f1",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/office-input/02514.jpg",
+      "bytes": 19533,
+      "sha256": "466bbb4ceca7c21ca760698ac1dc4b716cbb96599ebbfb4097410507b6f68aa0",
+      "package": "website-core"
+    },
+    {
+      "path": "工程/交互演示/assets/replica-web.ply",
+      "bytes": 77977445,
+      "sha256": "99ad4eaa2f3810fbab68106ce84165054000ed4c9b84897b6a73fb18555f1c7f",
+      "package": "replica-research"
+    }
+  ]
+}

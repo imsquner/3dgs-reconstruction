@@ -18,6 +18,7 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .venv/
+.venv-wsl/
 venv/
 node_modules/
 .idea/
@@ -79,6 +80,10 @@ results/
 工程/交互演示/assets/*.rgb
 
 # Host-specific protocol materialization, not source configuration
+host-protocols/
+local-protocol/
+.downloads/
+.asset-packages/
 工程/课程扩展/TUM跨场景迭代/协议/*-host-materialization.json
 工程/课程扩展/TUM跨场景迭代/协议/local-runtime.json
 

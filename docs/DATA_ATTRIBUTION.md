@@ -1,0 +1,9 @@
+# Data and reconstructed asset attribution
+
+TUM RGB-D Dataset: Jürgen Sturm, Nikolas Engelhard, Felix Endres, Wolfram Burgard and Daniel Cremers, "A Benchmark for the Evaluation of RGB-D SLAM Systems", IROS 2012. https://cvg.cit.tum.de/data/datasets/rgbd-dataset . Data licensed CC BY 4.0. TUM .tgz archives are redistributed byte-for-byte, without changing the dataset. Website PLY maps, sampled RGB previews and observation buffers are derived from those inputs; reconstruction, sampling and quaternion adaptation are this project's processing, not official TUM results.
+
+EndoSLAM dataset: K. B. Ozyoruk et al., "EndoSLAM dataset and an unsupervised monocular visual odometry and depth estimation approach for endoscopic videos", Medical Image Analysis 71 (2021), 102058. https://data.mendeley.com/datasets/cd2rtzm23r/1 . Data licensed CC BY 4.0. Unity website map and videos are derived local, short-sequence exploratory reconstructions; scale and long-sequence validity are not established. No full medical dataset is mirrored in this release.
+
+Replica Dataset: Julian Straub et al., "The Replica Dataset: A Digital Replica of Indoor Spaces", 2019. https://github.com/facebookresearch/Replica-Dataset . Replica Research Terms apply, including non-commercial research/education use and recipients' agreement before receiving access. Replica reconstruction PLY is separate from the general website package. It is a generated geometric/appearance asset, not a mirror of the raw Replica dataset. The terms do not separately define rights for generated PLY. Before download, read docs/licenses/Replica-Research-Terms.txt and accept the terms; do not interpret public availability as an MIT/commercial-use licence.
+
+The project is not affiliated with or endorsed by these dataset creators. Third-party dataset licences are separate from code licences. All assets are offered as-is; browser FPS is not online reconstruction throughput.
