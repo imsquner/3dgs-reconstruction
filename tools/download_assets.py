@@ -34,12 +34,13 @@ def download(item,cache,offline=False,retries=4):
     if partial.exists() and (not checkpoint.exists() or json.loads(checkpoint.read_text(encoding='utf-8'))!=identity): raise ValueError('Partial identity mismatch')
     if partial.is_symlink() or checkpoint.is_symlink(): raise ValueError('Unsafe download checkpoint')
     checkpoint.write_text(json.dumps(identity),encoding='utf-8')
+    request_url=item['url']
     for attempt in range(retries):
         start=partial.stat().st_size if partial.exists() else 0
         if start == item['bytes'] and matches(partial,item):
             os.replace(partial,final); checkpoint.unlink(missing_ok=True); return final
         try:
-            req=urllib.request.Request(item['url'],headers={'Range':f'bytes={start}-'} if start else {})
+            req=urllib.request.Request(request_url,headers={'Range':f'bytes={start}-'} if start else {})
             began=time.monotonic(); last=0
             with urllib.request.urlopen(req,timeout=30) as response:
                 if start and response.status==206:
@@ -64,6 +65,8 @@ def download(item,cache,offline=False,retries=4):
             partial.unlink(missing_ok=True); checkpoint.unlink(missing_ok=True); raise
         except (OSError,EOFError,http.client.IncompleteRead) as exc:
             if attempt+1==retries: raise
+            if isinstance(exc,urllib.error.HTTPError) and exc.code==404:
+                request_url=item['url']+('&' if '?' in item['url'] else '?')+'_retry='+str(time.time_ns())
             print(f'Retry {attempt+1}: {exc}',flush=True); time.sleep(min(2**attempt,8))
 
 def extract(archive,item,stage):

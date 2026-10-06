@@ -90,4 +90,17 @@ class Assets(unittest.TestCase):
             with self.assertRaises(OSError): d.install(path,self.item(path.read_bytes()),self.root/'target',[])
         self.assertFalse((self.root/'target/a').exists())
 
+
+    def test_cached_404_retries_fresh_url(self):
+        data=b'abc';item=self.item(data);urls=[]
+        class Response(io.BytesIO):status=200;headers={}
+        def response(req,**kw):
+            urls.append(req.full_url)
+            if len(urls)==1:raise d.urllib.error.HTTPError(req.full_url,404,'Not Found',{},None)
+            return Response(data)
+        with patch.object(d.urllib.request,'urlopen',response),patch.object(d.time,'sleep'):
+            self.assertEqual(d.download(item,self.cache).read_bytes(),data)
+        self.assertEqual(urls[0],item['url'])
+        self.assertTrue(urls[1].startswith(item['url']+'?_retry='))
+
 if __name__=='__main__': unittest.main()
