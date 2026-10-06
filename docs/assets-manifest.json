@@ -1,5 +1,5 @@
 {
-  "scope": "Existing local assets; not included in the public repository. No public redistribution permission is asserted.",
+  "scope": "Historical pre-release inventory including unused duplicate PLY files; superseded by release-assets.json for installation and verification.",
   "files": [
     {
       "path": "工程/交互演示/assets/office-exp-01-web.ply",

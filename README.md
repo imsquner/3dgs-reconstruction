@@ -70,7 +70,6 @@ python tools/download_assets.py --dataset tum-office
 算法在 Linux 中运行。Windows 推荐 **WSL2 + Ubuntu + NVIDIA GPU**：先确认 Windows NVIDIA 驱动和 WSL GPU 可用，再按 [运行指南](docs/RUNNING.md) 配置 CUDA/PyTorch 与原生扩展。在 WSL 的仓库根目录执行以下入口；完整依赖、环境约束及失败处理以运行指南为准。
 
 ```bash
-python tools/setup_upstream.py
 bash tools/setup_wsl.sh
 source .venv-wsl/bin/activate
 python tools/preflight.py --gpu
@@ -96,7 +95,7 @@ python tools/run_reconstruction.py --protocol local-protocol/tum-office/tum-offi
 └─ CONTRIBUTING.md              分支、提交和协作约定
 ```
 
-环境与算法：[RUNNING](docs/RUNNING.md) · [上游快照与许可](docs/UPSTREAM.md) · [展示证据](docs/SHOWCASE.md) · [资产清单](docs/assets-manifest.json) · [协作规则](CONTRIBUTING.md)。
+环境与算法：[RUNNING](docs/RUNNING.md) · [上游快照与许可](docs/UPSTREAM.md) · [展示证据](docs/SHOWCASE.md) · [Release 资产清单](docs/release-assets.json) · [协作规则](CONTRIBUTING.md)。
 
 ## 证据、限制与贡献来源
 
