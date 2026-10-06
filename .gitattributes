@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.patch text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.patch -whitespace
+工程/交互演示/vendor/** -text -whitespace

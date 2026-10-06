@@ -1,0 +1,60 @@
+{
+  "scope": "Existing local assets; not included in the public repository. No public redistribution permission is asserted.",
+  "files": [
+    {
+      "path": "工程/交互演示/assets/office-exp-01-web.ply",
+      "bytes": 4705607,
+      "sha256": "d1da1c7bd1de34cf5902c2c287155f2585a30346d60be20bd5569feb37c58bc8"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-02-web.ply",
+      "bytes": 4103399,
+      "sha256": "1a2f37212535eb71f69d201d915ce6dfcb7344265c177f40b99287baa0283486"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-03-web.ply",
+      "bytes": 4228995,
+      "sha256": "277deaf671ce04a7e34291275221311a5209712aa43693e636a52acfb0f77eb2"
+    },
+    {
+      "path": "工程/交互演示/assets/office-exp-04-web.ply",
+      "bytes": 4075451,
+      "sha256": "5f4f109337caf5f519638ebba7ca7c28f96fc3a6e64aeaf884c777262b1b6d58"
+    },
+    {
+      "path": "工程/交互演示/assets/office-observations.rgb",
+      "bytes": 1258323,
+      "sha256": "822a9ca83bfd6374bfab0e38db6e7e60da74981cfc3ab23dfe4c0765a9db5939"
+    },
+    {
+      "path": "工程/交互演示/assets/office-observations.xyz",
+      "bytes": 5033292,
+      "sha256": "1123063ae04cf4a0bfda2db18536225cd491ccc318c4c4f56a99b2f6b761bd0b"
+    },
+    {
+      "path": "工程/交互演示/assets/office-web.ply",
+      "bytes": 26411684,
+      "sha256": "6d68d7dfd91c45cf0adf6ec2f48866c16d3a63e35354f32efc05cfdb740a1fba"
+    },
+    {
+      "path": "工程/交互演示/assets/office.ply",
+      "bytes": 26411684,
+      "sha256": "2040846647ebaf961b2c11c9743ff7b875240cd916d4e838ae8435e957613021"
+    },
+    {
+      "path": "工程/交互演示/assets/replica-web.ply",
+      "bytes": 77977445,
+      "sha256": "99ad4eaa2f3810fbab68106ce84165054000ed4c9b84897b6a73fb18555f1c7f"
+    },
+    {
+      "path": "工程/交互演示/assets/replica.ply",
+      "bytes": 77977445,
+      "sha256": "c1af717eaee57ccfbb175faeac2bca07754929a96560dd3f6f9c8320d500786c"
+    },
+    {
+      "path": "工程/交互演示/assets/unity.ply",
+      "bytes": 412426,
+      "sha256": "d06b3f53f55a4c5f8a81df7c993548fa7f98a524b4d8b0e13f3095ce18f856b0"
+    }
+  ]
+}

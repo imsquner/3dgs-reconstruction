@@ -1,0 +1,50 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 70b7a04..7230930 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -8,7 +8,7 @@ option(BUILD_PYTHON_BINDINGS "Build python bindings" OFF)
+ 
+ set(CMAKE_BUILD_TYPE "Release")
+ 
+-find_package(PCL REQUIRED)
++find_package(PCL REQUIRED COMPONENTS common kdtree search filters registration)
+ find_package(Eigen3 REQUIRED)
+ add_definitions(${PCL_DEFINITIONS})
+ 
+diff --git a/include/fast_gicp/gicp/impl/fast_gicp_impl.hpp b/include/fast_gicp/gicp/impl/fast_gicp_impl.hpp
+index b7aa14a..44ae2d0 100644
+--- a/include/fast_gicp/gicp/impl/fast_gicp_impl.hpp
++++ b/include/fast_gicp/gicp/impl/fast_gicp_impl.hpp
+@@ -600,6 +600,8 @@ bool FastGICP<PointSource, PointTarget, SearchMethodSource, SearchMethodTarget>:
+ 
+   typename pcl::PointCloud<PointT>::Ptr newCloud(new pcl::PointCloud<PointT>);
+   newCloud->points.resize(source_num_trackable_points_);
++  newCloud->width = static_cast<std::uint32_t>(newCloud->points.size());
++  newCloud->height = 1;
+   // pcl::copyPointCloud(*cloud, filter, *newCloud);
+ 
+   // save covariances of trackable points
+@@ -721,6 +723,8 @@ bool FastGICP<PointSource, PointTarget, SearchMethodSource, SearchMethodTarget>:
+ 
+   typename pcl::PointCloud<PointT>::Ptr newCloud(new pcl::PointCloud<PointT>);
+   newCloud->points.resize(target_num_trackable_points_);
++  newCloud->width = static_cast<std::uint32_t>(newCloud->points.size());
++  newCloud->height = 1;
+   // pcl::copyPointCloud(*cloud, filter, *newCloud);
+ 
+   // save covariances of trackable points
+diff --git a/setup.py b/setup.py
+index 6acf2d7..f508801 100644
+--- a/setup.py
++++ b/setup.py
+@@ -50,6 +50,10 @@ class CMakeBuild(build_ext):
+             "-DCMAKE_BUILD_TYPE={}".format(cfg),  # not used on MSVC, but no harm,
+             # "-DBUILD_VGICP_CUDA=ON",
+             "-DBUILD_PYTHON_BINDINGS=ON",
++            "-DBUILD_apps=OFF",
++            "-DBoost_NO_BOOST_CMAKE=ON",
++            "-DCMAKE_C_COMPILER=" + os.environ.get("CC", "gcc"),
++            "-DCMAKE_CXX_COMPILER=" + os.environ.get("CXX", "g++"),
+         ]
+         build_args = []
+ 

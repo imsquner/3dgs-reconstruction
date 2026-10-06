@@ -1,0 +1,77 @@
+{
+  "jobs": [
+    [
+      2253,
+      "original",
+      10,
+      "optimized",
+      "optimized",
+      "learned",
+      "previous",
+      "local-tum-quality-motionfull-original-b10-v17"
+    ],
+    [
+      2253,
+      "original",
+      20,
+      "optimized",
+      "optimized",
+      "learned",
+      "previous",
+      "local-tum-quality-motionfull-original-b20-v17"
+    ],
+    [
+      2253,
+      "improved-shape",
+      20,
+      "optimized",
+      "raw-gicp",
+      "birth",
+      "constant-velocity",
+      "local-tum-quality-motionfull-combined-b20-v17"
+    ]
+  ],
+  "frames": 2253,
+  "seed": 0,
+  "input_fps": 5.0,
+  "growth_weight": 0.0,
+  "depth_weight": 0.05,
+  "coverage_weight": 0.05,
+  "needle_weight": 0.002,
+  "scripts": {
+    "online_motion_prior_full_batch.py": "e1b818797dbcecbbd9689ccb795482a9508694e39c9befbecb0c590cbc3cefd0",
+    "run_online_v17.py": "cc374a7afc420a43c56c9a5c6c42a3910dff9c7e9a018c25c223458675a96eb2",
+    "quality_motion_prior.py": "a31a54354d0701ab6d4042298e4f7813123c544d743f0097e89d2ba3dea66b8c",
+    "quality_tracking_opacity_v2.py": "6218db39e209923271439280e7a2288849adb4a7a4fd00193576df39d6ae8c12",
+    "quality_mapping_barrier_v2.py": "386347bcafa67ccbdb8bac5caea155b0568e6b33990037038c84cd45b28abf2a",
+    "quality_tracking_positions.py": "2828b77a34f94f958ced03ea9682aa6f178e09b6d01ee12cf20640fb5b05513d",
+    "quality_tracking_covariance.py": "4bad4508244c185d302c09de23197c2186a20e0dc48b0b2bae90339d734cd77a",
+    "online_quality_patch_v3.py": "ba3f90bfc916f8c904cf1d7a654573e4a03726b15b6bbfcf836d7e704e9ca0b0",
+    "quality_growth.py": "54b3d892d75959a4c7d656bea7f6800de2ad0bf1b2d92099447559eb11a59e72",
+    "quality_spacing.py": "7a242dd8a405387a866655b9b31e6f411d2d1503b8e3d893c42e6fb11272571f",
+    "quality_losses.py": "83496ed1af66a18fb4c33ce5875ed1746dd67fb63daa952b0b03a6e835d20f2b",
+    "quality_losses_v2.py": "d58e60aab871cec168eab585c9f6b683c8254e486c0b29a9dda0af120e450189",
+    "quality_depth_range.py": "ed4e34b705b6cd90da70fd2c6e1c8cb80bf920b409a1474ba08aa53371027109",
+    "quality_coverage.py": "f10552df3ea025bbe80029b76992ccb992cd3d1be5e2e4baa9aa8519c83007db",
+    "worker_seed.py": "654f94ac4309c1567209c76606ebc9107b8629a33361d526450b727dbbe3e87d",
+    "quality_core.py": "9aa75cd06f4bf93d4a574fd5c6ff057f0c663d82d0c3879312b7265180fe8c77",
+    "evaluate_local_v2.py": "a559173006e991ede25e3e8a0789ec7945c2cd9ade04b700c0749a22949c6a17",
+    "common_depth_v2.py": "65a732c154f8ed422eb894e3868bff00ad26244c637895d1a88bc2ce953c7427",
+    "visible_needle_effect_v2.py": "ee3e46725a402558ed031063c93588f015d87aa9c1218d063ceec65479f35d8f",
+    "describe_projected_needles.py": "589126a3bca231eeb3112ac1c49e55d9b640f932456701f917e13c55f6f64a1b",
+    "quality_gate.py": "2d7b482bc329b3b02b4b5d710a0ca4943f4b9711b2959c81657ccacbecf3bc8b",
+    "report_online.py": "7d633596e5c34161b3db70e11cc7ad62d67891164b39d6226e5caadd27acd392",
+    "build_matched_view_boards_v7.py": "ae93d1fa307355a2ba08b951b17b90bf0a5288c53955a91ea566002d7aff2160",
+    "../../服务器/projection.py": "9aa3f475faf0d4a581c9613c0a1bfad0b8043c5d7511ca181a101854a778adf0"
+  },
+  "protocol_sha256": "2f31fb0852b487927c880059d2bd882656e6456d6978c0615ec7b9f293ecd377",
+  "mapping_schedule": "observation-barrier",
+  "tracking_positions": "optimized",
+  "opacity_sources": [
+    "learned",
+    "birth"
+  ],
+  "stress_review_sha256": "1dfaee741ac1979a675bd7f1e3041a301110a2d003ced3cfb74c87a6d5492ce1",
+  "stress_gate_sha256": "e2ead954d2c70cb21c9f77b9b5f8a49b8861d0e5ec63998d0a2f1a4252ab3cc4",
+  "scope": "Full2253 TUM development controls: original10/original20/combined20, all same runner17. Same observations, fixed251 heldout and9 free views, no transfer tuning, no5FPS reconstruction claim. Frozen short+1200 pass only justify full run, not final acceptance."
+}

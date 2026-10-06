@@ -1,0 +1,87 @@
+# Credentials and local machine configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+credentials*.json
+secrets*.json
+*.local.json
+*.local.yaml
+
+# Python / Node / editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Compiled dependencies and generated packages
+build/
+dist/
+*.egg-info/
+*.so
+*.pyd
+*.dll
+*.o
+*.obj
+*.a
+*.lib
+
+# Raw datasets, runs and historical output directories
+data/
+datasets/
+数据/
+运行/
+logs/
+日志/
+状态/
+验证/
+版本归档/
+编译产物/
+依赖/
+checkpoints/
+outputs/
+results/
+*.log
+*.pid
+*.exit
+
+# Generated maps, model weights, videos and archives
+*.ply
+*.splat
+*.ksplat
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.mp4
+*.avi
+*.mov
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Browser observation buffers are shared separately
+工程/交互演示/assets/*.xyz
+工程/交互演示/assets/*.rgb
+
+# Host-specific protocol materialization, not source configuration
+工程/课程扩展/TUM跨场景迭代/协议/*-host-materialization.json
+工程/课程扩展/TUM跨场景迭代/协议/local-runtime.json
+
+# Fixed upstream checkouts are recreated by tools/setup_upstream.py
+工程/源码/
+工程/课程扩展/TUM跨场景迭代/来源/GS-ICP-SLAM/

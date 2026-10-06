@@ -1,0 +1,21 @@
+name: Source checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  independent-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install numpy scipy
+      - run: node --test 工程/交互演示/test_*.mjs
+      - run: python -m unittest test_quality_core test_portable_protocol test_atomic_json_retry test_frozen_plan_semantics test_projection_diagnostic -v
+        working-directory: 工程/课程扩展/TUM跨场景迭代
+      - run: python -m unittest test_ply_adapter -v
+        working-directory: 工程/交互演示

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "replica",
+    "label": "Replica office0",
+    "kind": "合成室内 · 最终3DGS",
+    "run": "srv-final-replicaoffice0-5fps-h10",
+    "ply": "assets/replica-web.ply",
+    "ply_sha256": "99ad4eaa2f3810fbab68106ce84165054000ed4c9b84897b6a73fb18555f1c7f",
+    "gaussians": 1146721,
+    "input_fps": 5,
+    "intrinsic": [
+      1200,
+      680,
+      600,
+      600,
+      599.5,
+      339.5
+    ],
+    "duration": 399.8,
+    "measured_tracking_fps": 4.501178864157693,
+    "ate_m": 0.0023084364956403114,
+    "bounds": "最终地图的轨迹回放；不代表历史高斯地图快照。医学仅局部、物理精度未评价。",
+    "source_ply_sha256": "c1af717eaee57ccfbb175faeac2bca07754929a96560dd3f6f9c8320d500786c",
+    "browser_adapter": {
+      "source_sha256": "c1af717eaee57ccfbb175faeac2bca07754929a96560dd3f6f9c8320d500786c",
+      "derived_sha256": "99ad4eaa2f3810fbab68106ce84165054000ed4c9b84897b6a73fb18555f1c7f",
+      "vertices": 1146721,
+      "source_rotation_order": "XYZW",
+      "viewer_rotation_order": "WXYZ",
+      "max_covariance_error": 0.0,
+      "covariance_samples": 2048,
+      "unchanged": "all fields except rot_0..rot_3 permutation; original source file untouched",
+      "evidence": "GS-ICP native forward.cu computeCov3D x=q[0],y=q[1],z=q[2],w=q[3]; standard browser buffer expects WXYZ"
+    },
+    "map_bounds": [
+      [
+        -1.9788827657699586,
+        -3.074417304992676,
+        -1.143484354019165
+      ],
+      [
+        2.348387956619262,
+        1.7832170963287346,
+        1.726092767715454
+      ]
+    ]
+  },
+  {
+    "id": "office",
+    "label": "TUM office",
+    "kind": "真实室内 · 最终3DGS",
+    "run": "srv-demo-officefull-5fps",
+    "ply": "assets/office-web.ply",
+    "ply_sha256": "6d68d7dfd91c45cf0adf6ec2f48866c16d3a63e35354f32efc05cfdb740a1fba",
+    "gaussians": 388401,
+    "input_fps": 5,
+    "intrinsic": [
+      640,
+      480,
+      535.4,
+      539.2,
+      320.1,
+      247.6
+    ],
+    "duration": 502.8,
+    "measured_tracking_fps": 4.999199420021845,
+    "ate_m": 0.08507753680739737,
+    "bounds": "最终地图的轨迹回放；不代表历史高斯地图快照。医学仅局部、物理精度未评价。",
+    "source_ply_sha256": "2040846647ebaf961b2c11c9743ff7b875240cd916d4e838ae8435e957613021",
+    "browser_adapter": {
+      "source_sha256": "2040846647ebaf961b2c11c9743ff7b875240cd916d4e838ae8435e957613021",
+      "derived_sha256": "6d68d7dfd91c45cf0adf6ec2f48866c16d3a63e35354f32efc05cfdb740a1fba",
+      "vertices": 388401,
+      "source_rotation_order": "XYZW",
+      "viewer_rotation_order": "WXYZ",
+      "max_covariance_error": 0.0,
+      "covariance_samples": 2048,
+      "unchanged": "all fields except rot_0..rot_3 permutation; original source file untouched",
+      "evidence": "GS-ICP native forward.cu computeCov3D x=q[0],y=q[1],z=q[2],w=q[3]; standard browser buffer expects WXYZ"
+    },
+    "map_bounds": [
+      [
+        -6.172369480133057,
+        -5.828974723815918,
+        -0.07309373468160629
+      ],
+      [
+        2.560964822769165,
+        4.465529441833496,
+        1.899130940437317
+      ]
+    ]
+  },
+  {
+    "id": "unity",
+    "label": "Unity colon",
+    "kind": "医学合成 · 局部3DGS",
+    "run": "srv-med-unity240",
+    "ply": "assets/unity.ply",
+    "ply_sha256": "d06b3f53f55a4c5f8a81df7c993548fa7f98a524b4d8b0e13f3095ce18f856b0",
+    "gaussians": 6059,
+    "input_fps": 5,
+    "intrinsic": [
+      320,
+      320,
+      156.0418,
+      155.7529,
+      178.5604,
+      181.8043
+    ],
+    "duration": 47.8,
+    "measured_tracking_fps": 3.743222804446628,
+    "ate_m": null,
+    "bounds": "最终地图的轨迹回放；不代表历史高斯地图快照。医学仅局部、物理精度未评价。",
+    "source_ply_sha256": "d06b3f53f55a4c5f8a81df7c993548fa7f98a524b4d8b0e13f3095ce18f856b0",
+    "browser_adapter": null,
+    "map_bounds": [
+      [
+        -3.025538923740387,
+        -13.157666521072388,
+        -4.981742434501648
+      ],
+      [
+        0.1454161877930165,
+        -6.609487709999084,
+        1.621699298620225
+      ]
+    ]
+  }
+]

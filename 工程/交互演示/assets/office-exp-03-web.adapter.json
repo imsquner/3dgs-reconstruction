@@ -1,0 +1,11 @@
+{
+  "source_sha256": "e6055285199fe50d042b2c4924f9079e39592bec7f9df7f5b46b1021add5225d",
+  "derived_sha256": "277deaf671ce04a7e34291275221311a5209712aa43693e636a52acfb0f77eb2",
+  "vertices": 62185,
+  "source_rotation_order": "XYZW",
+  "viewer_rotation_order": "WXYZ",
+  "max_covariance_error": 0.0,
+  "covariance_samples": 2048,
+  "unchanged": "all fields except rot_0..rot_3 permutation; original source file untouched",
+  "evidence": "GS-ICP native forward.cu computeCov3D x=q[0],y=q[1],z=q[2],w=q[3]; standard browser buffer expects WXYZ"
+}
