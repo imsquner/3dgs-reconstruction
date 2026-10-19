@@ -14,6 +14,34 @@
 
 4D 动态（Flow4DGS-SLAM，TUM fr3 三条序列）在 [`工程/4dgs/`](工程/4dgs/README.md)。
 
+## 演示截图
+
+截图来自当前工作区实际页面（1440×900），不是历史素材。
+
+**汇报① · Replica office0（GS-ICP 在线）**
+
+![汇报①](docs/media/demo-natural-1-replica.png)
+
+**汇报② · TUM office（GS-ICP 在线，沿轨迹视角）**
+
+![汇报②](docs/media/demo-natural-2-tum.png)
+
+**汇报③ · OOOSplat 离线重建（沿轨迹视角）**
+
+![汇报③](docs/media/demo-natural-3-ooosplat.png)
+
+**演示① · C3VD `trans_t2_b` 三角网格**
+
+![演示①](docs/media/demo-medical-1-trans-t2-b.png)
+
+**演示② · C3VD `cecum_t1_a` 三角网格**
+
+![演示②](docs/media/demo-medical-2-cecum.png)
+
+**观测累计（本地功能，资产不随仓库发布）**
+
+![观测累计](docs/media/demo-medical-1-observation.png)
+
 ## 快速开始
 
 需要 Python 3.10+ 和支持 WebGL2 的浏览器。**仓库不含大文件**，请先按 [`docs/ASSETS.md`](docs/ASSETS.md) 把 PLY 放到对应目录，再启动：
