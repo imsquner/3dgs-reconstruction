@@ -9,7 +9,14 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-STAGE = ROOT / '工程/课程扩展/TUM跨场景迭代'
+DEMO = ROOT / '工程/交互演示'
+SCENES = (
+    DEMO / 'assets/replica.json',
+    DEMO / 'assets/natural/tum-comparison/GSICP10.json',
+    DEMO / 'assets/natural/ooosplat-office/balanced/scene.json',
+    DEMO / 'assets/medical/tsdf/trans_t2_b/open3d_park_v0500/scene.json',
+    DEMO / 'assets/medical/tsdf/cecum_t1_a/open3d_park_v1000/scene.json',
+)
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
@@ -21,18 +28,18 @@ def main():
         if not condition:
             failures.append(label)
     check('Python >= 3.10 (CPU tooling)', sys.version_info >= (3, 10))
-    check('runner and portable protocol', all((STAGE / n).is_file() for n in ('run_online_v18.py', 'portable_protocol.py')))
-    protocols = list((STAGE / '协议').glob('*.json'))
-    check('public scene protocols', any(not x.stem.endswith(('-observations', '-host-materialization')) for x in protocols))
-    for path in protocols:
+    check('demo site sources', all((DEMO / n).is_file() for n in ('server.py', 'catalog.mjs', 'app.mjs')))
+    check('public scene protocols', all(path.is_file() for path in SCENES))
+    for path in SCENES:
         try:
-            json.loads(path.read_text(encoding='utf-8'))
+            scene = json.loads(path.read_text(encoding='utf-8'))
+            check('valid scene ' + path.parent.name, bool(scene.get('ply')) and 'intrinsic' in scene)
         except (ValueError, OSError):
-            check('valid JSON ' + path.name, False)
+            check('valid scene ' + path.parent.name, False)
     if a.gpu:
         check('Linux runtime', platform.system() == 'Linux')
         check('Python 3.10 target', sys.version_info[:2] == (3, 10))
-        check('pinned upstream fetched', (STAGE / '来源/GS-ICP-SLAM/gs_icp_slam.py').is_file())
+        check('upstream setup tool present', (ROOT / 'tools/setup_upstream.py').is_file())
         for name in ('nvidia-smi', 'nvcc'):
             executable = shutil.which(name)
             check(name + ' available', executable is not None)
