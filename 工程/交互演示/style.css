@@ -7,3 +7,9 @@
 .catalog-controls{display:grid;gap:6px}.catalog-controls label{font-size:10px;color:var(--muted);margin-top:3px}.catalog-controls select{width:100%;min-width:0;font-size:11px;padding:0 7px;height:33px}.catalog-summary{font-size:10px;line-height:1.6;overflow-wrap:anywhere;margin:2px 0;color:#586f80}.sequence-state{justify-self:start;margin:0;border:1px solid #d5e2e9;background:#edf2f5;border-radius:5px;padding:3px 7px;color:#627381;font-size:10px}.sequence-state[data-available=true]{color:#216b61;border-color:#b5dcd4;background:#e7f4ef}.corner{max-width:calc(100% - 24px);overflow-wrap:anywhere;line-height:1.6}#status.empty .load-symbol{animation:none;border-radius:5px;border-color:#83a6bb}#status.empty #loadProgress{display:none}
 
 #experimentPanel[hidden]{display:none}#experimentPanel select{width:100%;margin:8px 0}#experimentPanel button[aria-pressed="true"]{background:#e8f4fa;border-color:#1983ad;color:#12618a}#experimentMetrics{white-space:pre-line;font-size:12px;line-height:1.8;color:#155e75}
+
+/* Presentation: retain provenance in source records, keep the live page concise. */
+#datasetSummary,#sequenceState,#modeNote,#offlineInfo,#experimentMetrics,.mode-note,#statusHint,#mouseHint {display:none !important;}
+.boundary,#viewTip,.hud small,.metrics dl>div:has(#tracking),.metrics dl>div:has(#ate) {display:none !important;}
+
+#historyStill{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;z-index:2;pointer-events:none}#modeHistory{grid-column:1 / -1;height:42px}#inputDepth{border-top:1px solid #526b7d}

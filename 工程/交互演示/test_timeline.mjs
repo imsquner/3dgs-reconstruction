@@ -19,3 +19,5 @@ test('timeline uses actual source indices across held-out gaps',()=>{
  assert.equal(boundedTime(-1,2),0);
  assert.equal(boundedTime(9,2),2);
 });
+
+test('recorded timestamps override artificial delivery FPS',()=>{assert.equal(sourceIndexAt(.19,5,[0,10,20],[0,.1,.2]),1);assert.equal(sourceIndexAt(.2,10,[0,10,20],[0,.1,.2]),2);});

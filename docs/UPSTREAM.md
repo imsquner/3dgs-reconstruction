@@ -15,3 +15,11 @@ MonoGS：https://github.com/muskie82/MonoGS ，`6c9254c319d8bff5caeef65259e6bb09
 数据：TUM https://vision.in.tum.de/data/datasets/rgbd-dataset 、Replica https://github.com/facebookresearch/Replica-Dataset 、EndoSLAM https://github.com/CapsuleEndoscope/EndoSLAM 、C3VD https://durrlab.github.io/C3VD/ 。本仓库不重新分发数据或承诺这些来源具有相同许可。
 
 获取脚本仅执行 Git 固定版本获取、源码校验与已记录补丁。不安装依赖、不训练。两个 GS-ICP 目录保持同一固定 commit，runner 使用隔离快照；本机二进制需重建。历史 freeze/audit 脚本仍需原实验资料，不保证无数据的新 checkout 能运行每个历史脚本。
+
+## 演示版新增上游
+
+- OOOSplat：https://github.com/ooolabdev/ooosplat ，桌面应用与离线管线；本仓库不打包其二进制。
+- OOOBrush：https://github.com/ooolabdev/OOOBrush ，上游为 https://github.com/ArthurBrussee/brush 。
+- Flow4DGS-SLAM：https://github.com/wangys16/Flow4DGS-SLAM ，commit `ecb4e94`；论文 arXiv 2604.22339（CVPR 2026 Highlight）。
+- Open3D：https://www.open3d.org ，TSDF 融合、ICP 与 RGB-D 里程计实现（MIT）。
+- C3VD：https://durrlab.github.io/C3VD/ ，CC BY-NC-SA 4.0；本仓库不重新分发数据。

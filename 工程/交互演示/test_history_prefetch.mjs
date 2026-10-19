@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {createPreparedHistorySlot} from './history-map.mjs';
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let loads=[],disposed=[],release;
+const slot=createPreparedHistorySlot({load:async key=>{loads.push(key);if(key===1)await new Promise(r=>release=r);return {key};},dispose:async v=>disposed.push(v.key)});
+slot.warm(1);await sleep(0);slot.warm(2);release();assert.deepEqual(await slot.take(2),{key:2});assert.deepEqual(loads,[1,2]);assert.deepEqual(disposed,[1]);
+slot.warm(3);await sleep(0);assert.deepEqual(await slot.take(3),{key:3});assert.deepEqual(loads,[1,2,3]);
+slot.warm(4);await sleep(0);await slot.stop();assert.deepEqual(disposed,[1,4]);assert.equal(await slot.take(5),null);
+console.log('bounded prefetch, stale cleanup, transfer ownership, stop passed');
+const {installPreparedHistoryArrays}=await import('./history-map.mjs');
+const fake={getSplatCount:()=>2,fillSplatCenterArray(){throw Error('uncached')},fillSplatCovarianceArray(){throw Error('uncached')},fillSplatColorArray(){throw Error('uncached')}};
+installPreparedHistoryArrays(fake,{centers:new Float32Array([1,2,3,4,5,6]),covariances:new Float32Array(12).fill(7),colors:new Uint8Array(8).fill(255)});
+const centers=new Float32Array(3);fake.fillSplatCenterArray(centers,null,1,1,0);assert.deepEqual([...centers],[4,5,6]);
+const colors=new Uint8Array(8);fake.fillSplatColorArray(colors,0);assert.equal(colors[7],255);
+console.log('prepared bulk array ranges and attributes passed');
+const {loadPreparedHistoryPresentation}=await import('./history-map.mjs');let released=false;
+await assert.rejects(loadPreparedHistoryPresentation(Promise.reject(Error('input')),Promise.resolve({candidate:1}),async()=>{released=true;}));assert.equal(released,true,'input failure must release transferred map');

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Flow4DGS · 动态高斯渐进回放</title>
+<link rel="stylesheet" href="style.css?v=top3" />
+</head>
+<body>
+<header>
+  <div class="brand">Flow4DGS </div>
+  <div class="head-right">
+    <button id="btnFull">全屏</button>
+    <span id="conn" class="dot"></span>
+  </div>
+</header>
+
+<div class="workspace">
+<div class="visual-column">
+<section class="inputs-top">
+  <div><div class="card-title">RGB 输入 <span id="inputCap" hidden style="display:none">源帧 —</span></div><video id="inputVideo" muted playsinline loop hidden style="display:none"></video><img id="inputRgb" alt="当前帧 RGB 输入" /></div>
+  <div><div class="card-title">Depth 输入 · 0–6 m，灰色为无效深度</div><img id="inputDepth" alt="当前帧深度输入" /></div>
+</section><main>
+  <section class="stage" id="stage">
+    <canvas id="view"></canvas>
+    <div class="hint" id="hint" hidden style="display:none">拖拽旋转 · 滚轮缩放 · 右键平移</div>
+    <div class="stats" id="stats">初始化…</div>
+  </section>
+
+</main></div>
+  <aside class="panel">
+    <div class="card">
+      <div class="card-title">序列</div>
+      <select id="seqSel" style="width:100%"></select>
+      <div class="seq-meta" id="seqMeta"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">观测方式</div>
+      <div class="seg">
+        <button id="mOrbit" class="active">自由观察</button>
+        <button id="mTraj">沿估计轨迹</button>
+      </div>
+      <label class="row" for="frameNumber">帧号（从 0 开始）<input id="frameNumber" type="number" min="0" max="297" value="0" style="width:80px" /></label>
+      <label class="row">时间 <span id="tval">0.00 s</span></label>
+      <input id="seek" type="range" min="0" max="1" step="0.001" value="0" />
+      <div class="row btns"><button id="prevFrame">上一帧</button><button id="nextFrame">下一帧</button></div>
+      <div class="row btns">
+        <button id="btnPlay">播放</button>
+        <select id="speed">
+          <option value="0.25">0.25×</option>
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="2">2×</option>
+        </select>
+        <button id="btnReset">复位</button>
+        <button id="btnOverview">拉远看整体</button>
+      </div>
+      <label class="row" for="growMode">建图显示</label>
+      <select id="growMode" style="width:100%">
+        <option value="off" selected>完整模型</option>
+        <option value="birth">出生帧显现</option>
+        <option value="anim">渐进铺开</option>
+      </select>
+      <div class="born" id="bornBar">高斯 — / —</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">模型信息</div>
+      <dl class="kv">
+        <div><dt>高斯数</dt><dd id="kGauss">—</dd></div>
+        <div><dt>关键帧</dt><dd id="kKf">—</dd></div>
+        <div><dt>序列帧数</dt><dd id="kFrames">—</dd></div>
+        <div><dt>渲染耗时</dt><dd id="kMs">—</dd></div>
+        <div><dt>显示帧率</dt><dd id="kFps">—</dd></div>
+      </dl>
+    </div>
+
+    <div class="card note" hidden style="display:none">
+      <div class="card-title">展示边界</div>
+      <p>这是最终模型的动态回放，不是现场在线建图。出生帧模式逐步显现最终保留的高斯，不还原训练中修正和删除的全部过程。首帧已有大量高斯，增长不一定明显。</p>
+      <p>已开放大范围观察；拉远或转向未观测区域时可能出现空洞和漂浮物，这些区域没有完整重建。</p>
+    </div>
+  </aside></div>
+<script src="app.js?v=syncfix4"></script>
+</body>
+</html>

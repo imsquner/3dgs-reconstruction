@@ -91,3 +91,10 @@ local-protocol/
 工程/源码/
 工程/课程扩展/TUM跨场景迭代/来源/GS-ICP-SLAM/
 工程/交互演示/assets/office-input/
+
+# Observation-accumulation buffers are local-only in this demo build
+**/observations.xyz
+**/observations.rgb
+**/input/*.jpg
+**/depth_*.jpg
+工程/交互演示/catalog.full.mjs.bak

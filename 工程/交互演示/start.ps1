@@ -25,3 +25,4 @@ if (-not $demoHealthy) {
     if (-not $demoHealthy) { throw 'Demo service failed. Check logs or whether port 8765 is in use.' }
 }
 if (-not $NoBrowser) { Start-Process $demoUrl }
+
