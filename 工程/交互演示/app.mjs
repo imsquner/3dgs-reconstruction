@@ -1,7 +1,8 @@
-import {createHistoryPlayback,loadHistoryInput,loadHistoryMap,createPreparedHistorySlot,installPreparedHistoryArrays,loadPreparedHistoryPresentation} from './history-map.mjs';
+import {createHistoryPlayback,loadHistoryInput,loadHistoryMap,loadPreparedHistoryPresentation,disposePreparedViewer} from './history-map.mjs';
+import {createRawPrefetch} from './assets/history-raw-prefetch.mjs';
 import {parseMedicalMesh} from './assets/medical/mesh-loader.mjs';
 import * as THREE from 'three';
-import {Viewer,SplatBuffer,SceneRevealMode,LogLevel} from 'gs';
+import {Viewer,SceneRevealMode,LogLevel} from 'gs';
 import {OrbitControls} from './vendor/OrbitControls.js';
 import {cameraFromPose,sourceIndexAt,boundedTime} from './timeline.mjs';
 import {controlAvailability} from './ui-state.mjs';
@@ -50,7 +51,9 @@ const threeScene=new THREE.Scene();
 let mesh;
 let viewer,scene,line,cursor,observations,accumulation,contentMode='gs',playing=false,following=false,time=0,last=performance.now(),saved=null,token=0,loading=false,lastInput='';
 let historyLoader=null,historyVersion=null,historyRequested=null;
-let historyPlayback=null,historyFrame=null,historyRetiring=Promise.resolve(),historyMapSlot=null,historyInputs=new Map();let historyWorker=null,historyWorkerSerial=0,historyWorkerJobs=new Map();
+let historyPlayback=null,historyFrame=null,historyRetiring=Promise.resolve(),historyInputs=new Map();
+const previewParams=new URLSearchParams(location.search),rawPrefetch=previewParams.get('hybrid')!=='0'?createRawPrefetch(loadHistoryMap):null;
+const shortPreviewEnd=previewParams.get('short')==='1'?12:null;
 let fpsStart=performance.now(),frames=0;
 let mapReady=false,lastSceneId='replica',versionNumber='00';
 function effectiveEntry(id=lastSceneId){return {...findSequence(id).sequence,...(resolveVersion(id,versionNumber)||{})};}
@@ -88,41 +91,34 @@ function syncHistory(){
  if(state.done&&playing)setPlay(false);
 }
 function adoptHistoryImage(id,image){const old=$(id);for(const a of old.attributes)if(a.name!=='src')image.setAttribute(a.name,a.value);old.replaceWith(image);}
-async function disposeHistoryPayload(payload){if(payload?.candidate)await payload.candidate.dispose();}
+async function disposeHistoryPayload(payload){if(payload?.candidate)await disposePreparedViewer(payload.candidate);}
 function historyInput(row){
  let promise=historyInputs.get(row.source_frame);if(!promise){promise=loadHistoryInput(row);promise.catch(()=>{});historyInputs.set(row.source_frame,promise);}return promise;
 }
 function warmHistory(){
  if(!historyPlayback||!playing)return;const state=historyPlayback.state;if(state.busy||state.failed)return;
- const next=scene.snapshots[state.mapIndex+1];if(next)historyMapSlot?.warm(next.snapshot_id);
  const upcoming=scene.input_frames.slice(state.frameIndex+1,state.frameIndex+9),keys=new Set(upcoming.map(r=>r.source_frame));
  for(const key of historyInputs.keys())if(!keys.has(key))historyInputs.delete(key);
  for(const row of upcoming)historyInput(row);
+ if(rawPrefetch)rawPrefetch.warm(scene.snapshots[state.mapIndex+1]);
 }
-function decodeHistory(row){
- if(!historyWorker){historyWorker=new Worker('/assets/history-worker.mjs',{type:'module'});historyWorker.onmessage=({data})=>{const job=historyWorkerJobs.get(data.id);if(!job)return;historyWorkerJobs.delete(data.id);data.error?job.reject(Error(data.error)):job.resolve(data);};historyWorker.onerror=e=>{historyWorker?.terminate();historyWorker=null;for(const job of historyWorkerJobs.values())job.reject(Error(e.message));historyWorkerJobs.clear();};}
- return new Promise((resolve,reject)=>{const id=++historyWorkerSerial;historyWorkerJobs.set(id,{resolve,reject});historyWorker.postMessage({id,row});});
-}
-async function buildHistoryMap(id,isCurrent){
- const row=scene.snapshots.find(r=>r.snapshot_id===id),perf={version:id,started:performance.now()};
- const prepared=await decodeHistory(row);perf.readMs=prepared.readMs;perf.workerMs=prepared.workerMs;
- if(!isCurrent())return null;await historyRetiring;if(!isCurrent())return null;
- const buffer=installPreparedHistoryArrays(new SplatBuffer(prepared.buffer),prepared);let candidate;
+async function buildHistoryMap(row,isCurrent){
+ const started=performance.now();await historyRetiring;if(!isCurrent())return null;
+ const readStarted=performance.now();
+ const map=await (rawPrefetch?rawPrefetch.take(row):loadHistoryMap(row));if(!isCurrent())return null;
+ const readMs=performance.now()-readStarted,nativeStarted=performance.now();
+ const url=URL.createObjectURL(new Blob([map.buffer],{type:'application/octet-stream'}));let candidate;
  try{
-  candidate=new Viewer({selfDrivenMode:false,renderer,camera,threeScene,useBuiltInControls:false,gpuAcceleratedSort:false,enableSIMDInSort:true,sharedMemoryForWorkers:crossOriginIsolated,integerBasedSort:false,halfPrecisionCovariancesOnGPU:false,sphericalHarmonicsDegree:row.sh_degree,optimizeSplatData:false,sceneRevealMode:SceneRevealMode.Instant,logLevel:LogLevel.None,ignoreDevicePixelRatio:true});
-    const mapMesh=candidate.splatMesh;
-  mapMesh.getDataForDistancesComputation=(from,to)=>({centers:prepared.paddedCenters.subarray(from*4,(to+1)*4),sceneIndexes:prepared.sceneIndexes.subarray(from,to+1)});
-  mapMesh.updateVisibleRegion=()=>{mapMesh.calculatedSceneCenter.fromArray(prepared.center);mapMesh.material.uniforms.sceneCenter.value.copy(mapMesh.calculatedSceneCenter);mapMesh.maxSplatDistanceFromSceneCenter=mapMesh.visibleRegionRadius=mapMesh.visibleRegionBufferRadius=prepared.radius;mapMesh.updateVisibleRegionFadeDistance(SceneRevealMode.Instant);};
-  await candidate.addSplatBuffers([buffer],[{splatAlphaRemovalThreshold:0}],false,false,false);
-  await renderer.compileAsync(mapMesh,camera,threeScene);
-  for(const item of Object.values(mapMesh.splatDataTextures)){if(item.texture){renderer.initTexture(item.texture);await new Promise(requestAnimationFrame);}}
+  candidate=new Viewer({selfDrivenMode:false,renderer,camera,threeScene,useBuiltInControls:false,gpuAcceleratedSort:false,enableSIMDInSort:true,sharedMemoryForWorkers:crossOriginIsolated,integerBasedSort:false,halfPrecisionCovariancesOnGPU:false,sphericalHarmonicsDegree:row.sh_degree,optimizeSplatData:true,sceneRevealMode:SceneRevealMode.Instant,logLevel:LogLevel.None,ignoreDevicePixelRatio:true});
+  await nativeLoadPromise(candidate.addSplatScene(url,{format:2,splatAlphaRemovalThreshold:0,showLoadingUI:false,progressiveLoad:false}));
   if(!candidate.splatRenderReady)throw Error('地图尚未准备完成');
-  perf.readyMs=performance.now()-perf.started;(window.historyPerf??=[]).push(perf);if(window.historyPerf.length>500)window.historyPerf.shift();return {candidate};
- }catch(error){try{await candidate?.dispose();}catch{}throw error;}finally{}
+  (window.historyPerf??=[]).push({version:row.snapshot_id,pipeline:'native-ply',prefetchEnabled:!!rawPrefetch,rawBytes:map.buffer.byteLength,readMs,nativeMs:performance.now()-nativeStarted,readyMs:performance.now()-started,prefetch:rawPrefetch?.stats});if(window.historyPerf.length>500)window.historyPerf.shift();
+  return {candidate};
+ }catch(error){try{await disposePreparedViewer(candidate);}catch{}throw error;}finally{URL.revokeObjectURL(url);}
 }
 async function prepareHistory(target,isCurrent){
  stage.dataset.historyTarget=String(target.map.snapshot_id);
- const payload=await loadPreparedHistoryPresentation(target.inputChanged?historyInput(target.input):null,target.mapChanged?historyMapSlot.take(target.map.snapshot_id):null,disposeHistoryPayload);
+ const payload=await loadPreparedHistoryPresentation(target.inputChanged?historyInput(target.input):null,target.mapChanged?buildHistoryMap(target.map,isCurrent):null,disposeHistoryPayload);
  if(!isCurrent()){await disposeHistoryPayload(payload);return {};}
  return payload;
 }
@@ -131,11 +127,12 @@ function presentHistory(payload,target){
  const row=target.map;
  if(payload.candidate){
   const old=viewer;viewer=payload.candidate;payload.candidate=null;
-  historyRetiring=old?old.dispose().catch(error=>console.warn('History retired viewer cleanup',error)):Promise.resolve();
+  historyRetiring=old?disposePreparedViewer(old).catch(error=>console.warn('History retired viewer cleanup',error)):Promise.resolve();
   if(line){threeScene.remove(line);line.geometry.dispose();}
   line=new THREE.Line(new THREE.BufferGeometry().setFromPoints(row.keyframe_c2w.map(p=>new THREE.Vector3(...cameraFromPose(p).position))),trajectoryMaterial);line.renderOrder=20;line.visible=$('trajectory').checked;threeScene.add(line);
  }
  historyVersion=row;historyRequested=row.snapshot_id;historyFrame=target.input;
+ if(shortPreviewEnd!==null&&target.time>=shortPreviewEnd)setPlay(false);
  if(payload.input){adoptHistoryImage('inputImage',payload.input.images[0]);adoptHistoryImage('inputDepth',payload.input.images[1]);}
  $('inputDepth').hidden=false;$('inputCaption').textContent=`RGB / Depth · 源帧 ${target.input.source_frame}`;
  $('count').textContent=row.gaussians.toLocaleString();
@@ -158,13 +155,13 @@ async function load(id,preserved=null){
   camera.near=scene.near??(scene.label?.includes('医学')||scene.representation==='mesh'||id.startsWith('medgs-')?.0002:.02);camera.far=scene.far||200;resize();setPose(scene.poses[0]);
   if(contentMode==='history'){
    if(!scene.input_frames?.length)throw Error('逐帧输入索引尚未准备完成');
-   historyMapSlot=createPreparedHistorySlot({load:buildHistoryMap,dispose:disposeHistoryPayload});historyPlayback=createHistoryPlayback({frames:scene.input_frames,snapshots:scene.snapshots,fps:scene.input_fps,load:prepareHistory,commit:presentHistory,dispose:disposeHistoryPayload,onState:syncHistory,onError:error=>{setPlay(false);stage.dataset.historyFailed='true';$('frame').textContent=error.message;}});
+   historyPlayback=createHistoryPlayback({frames:scene.input_frames,snapshots:scene.snapshots,fps:scene.input_fps,load:prepareHistory,commit:presentHistory,dispose:disposeHistoryPayload,onState:syncHistory,onError:error=>{setPlay(false);stage.dataset.historyFailed='true';$('frame').textContent=error.message;}});
    await historyPlayback.seek(preserved?.time||0);
    if(historyPlayback.state.failed)throw Error('历史地图或输入加载失败');
   }else if(contentMode==='gs'&&scene.representation==='mesh'){
    status('载入最终三角网格');const response=await fetch(scene.ply);if(!response.ok)throw Error('Mesh HTTP '+response.status);mesh=parseMedicalMesh(await response.text());threeScene.add(mesh);
   }else if(contentMode==='gs'){
-   viewer=new Viewer({selfDrivenMode:false,renderer,camera,threeScene,useBuiltInControls:false,gpuAcceleratedSort:false,enableSIMDInSort:true,sharedMemoryForWorkers:crossOriginIsolated,integerBasedSort:false,halfPrecisionCovariancesOnGPU:false,sphericalHarmonicsDegree:scene.spherical_harmonics_degree??0,sceneRevealMode:SceneRevealMode.Instant,logLevel:LogLevel.None,ignoreDevicePixelRatio:true});
+   viewer=new Viewer({selfDrivenMode:false,renderer,camera,threeScene,useBuiltInControls:false,gpuAcceleratedSort:false,enableSIMDInSort:true,sharedMemoryForWorkers:crossOriginIsolated,integerBasedSort:false,halfPrecisionCovariancesOnGPU:false,sphericalHarmonicsDegree:scene.spherical_harmonics_degree??0,optimizeSplatData:true,sceneRevealMode:SceneRevealMode.Instant,logLevel:LogLevel.None,ignoreDevicePixelRatio:true});
    status('载入最终高斯地图');await nativeLoadPromise(viewer.addSplatScene(scene.ply,{splatAlphaRemovalThreshold:scene.splat_alpha_threshold??1,showLoadingUI:false,progressiveLoad:false,onProgress:p=>status('载入与整理高斯地图',Number.isFinite(p)?p:null)}));
   }else{
    status('读取本场景观测记录');accumulation=await getAsset(scene.accumulation_path||'assets/office-accumulation.json');
@@ -182,10 +179,11 @@ async function load(id,preserved=null){
  finally{loading=false;lockControls();}
 }
 async function clearMap(){
- await historyPlayback?.stop();historyPlayback=null;historyFrame=null;await historyMapSlot?.stop();historyMapSlot=null;historyInputs.clear();historyWorker?.terminate();historyWorker=null;historyWorkerJobs.clear();await historyRetiring;historyRetiring=Promise.resolve();await historyLoader?.stop();$('historyStill').hidden=true;$('historyStill').removeAttribute('src');historyLoader=null;historyVersion=null;historyRequested=null;$('inputDepth').hidden=true;$('inputDepth').removeAttribute('src');
+ rawPrefetch?.clear();
+ await historyPlayback?.stop();historyPlayback=null;historyFrame=null;historyInputs.clear();await historyRetiring;historyRetiring=Promise.resolve();await historyLoader?.stop();$('historyStill').hidden=true;$('historyStill').removeAttribute('src');historyLoader=null;historyVersion=null;historyRequested=null;$('inputDepth').hidden=true;$('inputDepth').removeAttribute('src');
  if(mesh){threeScene.remove(mesh);mesh.geometry.dispose();mesh.material.dispose();mesh=null;}
  const oldViewer=viewer;viewer=null;
- if(oldViewer){try{await oldViewer.dispose();}catch(e){console.warn('Viewer cleanup reported an error',e);}}
+ if(oldViewer){try{await disposePreparedViewer(oldViewer);}catch(e){console.warn('Viewer cleanup reported an error',e);}}
  if(observations){threeScene.remove(observations);observations.geometry.dispose();observations.material.dispose();observations=null;}
  if(line){threeScene.remove(line);line.geometry.dispose();line=null;}
  if(cursor){threeScene.remove(cursor);cursor.geometry.dispose();cursor.material.dispose();cursor=null;}

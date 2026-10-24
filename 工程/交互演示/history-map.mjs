@@ -52,9 +52,11 @@ export async function loadHistoryInput(row){
  const images=await Promise.all([row.rgb,row.depth].map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve(image);image.onerror=()=>reject(Error('输入图像读取失败'));image.src=src;})));
  return {row,images};
 }
-export async function loadHistoryMap(row){
- const response=await fetch(row.ply);if(!response.ok)throw Error(`地图 HTTP ${response.status}`);
+export async function loadHistoryMap(row,{signal}={}){
+ const response=await fetch(row.ply,{signal});if(!response.ok)throw Error(`地图 HTTP ${response.status}`);
+ signal?.throwIfAborted();
  const buffer=await response.arrayBuffer();const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',buffer))].map(x=>x.toString(16).padStart(2,'0')).join('');
+ signal?.throwIfAborted();
  if(hash!==row.sha256)throw Error('快照校验失败');return {row,buffer};
 }
 
@@ -73,17 +75,25 @@ export function createPreparedHistorySlot({load,dispose}){
  return {
   warm(key){const item=warm(key);item?.promise.catch(()=>{});},
   async take(key){const item=warm(key);if(!item)return null;const value=await item.promise;if(entry!==item||!item.valid)return null;item.taken=true;entry=null;return value;},
+  async clear(){const old=entry;entry=null;if(old)old.valid=false;await tail;await release(old);},
   async stop(){stopped=true;const old=entry;entry=null;if(old)old.valid=false;await tail;await release(old);}
  };
+}
+
+export async function disposePreparedViewer(viewer){
+ if(!viewer)return;
+ const mesh=viewer.splatMesh,texture=mesh?.material?.uniforms?.covariancesTextureHalfFloat?.value;
+ const orphan=texture?.isTexture&&!Object.values(mesh.splatDataTextures||{}).some(item=>item.texture===texture)?texture:null;
+ try{await viewer.dispose();}finally{orphan?.dispose();}
 }
 
 export function installPreparedHistoryArrays(buffer,prepared){
  const count=buffer.getSplatCount(),identity=m=>!m||m.elements.every((v,i)=>v===(i%5===0?1:0));
  function copy(out,source,width,from=0,to=count-1,dest=from){out.set(source.subarray(from*width,(to+1)*width),dest*width);}
  const centers=buffer.fillSplatCenterArray.bind(buffer),cov=buffer.fillSplatCovarianceArray.bind(buffer),color=buffer.fillSplatColorArray.bind(buffer);
- buffer.fillSplatCenterArray=(out,transform,from,to,dest)=>identity(transform)?copy(out,prepared.centers,3,from,to,dest):centers(out,transform,from,to,dest);
- buffer.fillSplatCovarianceArray=(out,transform,from,to,dest,compression)=>identity(transform)&&!compression?copy(out,prepared.covariances,6,from,to,dest):cov(out,transform,from,to,dest,compression);
- buffer.fillSplatColorArray=(out,alpha,from,to,dest)=>(!alpha||alpha===1)?copy(out,prepared.colors,4,from,to,dest):color(out,alpha,from,to,dest);
+ buffer.fillSplatCenterArray=(out,transform,from,to,dest)=>prepared.centers&&identity(transform)?copy(out,prepared.centers,3,from,to,dest):centers(out,transform,from,to,dest);
+ buffer.fillSplatCovarianceArray=(out,transform,from,to,dest,compression)=>prepared.covariances&&identity(transform)&&!compression?copy(out,prepared.covariances,6,from,to,dest):cov(out,transform,from,to,dest,compression);
+ buffer.fillSplatColorArray=(out,alpha,from,to,dest)=>prepared.colors&&(!alpha||alpha===1)?copy(out,prepared.colors,4,from,to,dest):color(out,alpha,from,to,dest);
  return buffer;
 }
 
@@ -94,4 +104,27 @@ export async function loadPreparedHistoryPresentation(inputPromise,mapPromise,di
   throw input.status==='rejected'?input.reason:map.reason;
  }
  return {input:input.value,...map.value};
+}
+
+// Upload only addressed rows; WebGL storage is allocated normally by Three.
+// Interception lasts only for synchronous initTexture; rendering keeps native GL.
+export async function uploadHistoryTexture(renderer,texture,{rows=64,activeRows=Infinity,yieldFrame=()=>new Promise(requestAnimationFrame)}={}){
+ const gl=renderer.getContext(),native=gl.texSubImage2D,jobs=[];
+ const unpack=[gl.UNPACK_ALIGNMENT,gl.UNPACK_ROW_LENGTH,gl.UNPACK_SKIP_PIXELS,gl.UNPACK_SKIP_ROWS,gl.UNPACK_IMAGE_HEIGHT,gl.UNPACK_SKIP_IMAGES,gl.UNPACK_FLIP_Y_WEBGL,gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,gl.UNPACK_COLORSPACE_CONVERSION_WEBGL];
+ const components=new Map([[gl.RGBA,4],[gl.RGBA_INTEGER,4],[gl.RGB,3],[gl.RGB_INTEGER,3],[gl.RG,2],[gl.RG_INTEGER,2],[gl.RED,1],[gl.RED_INTEGER,1]]);
+ gl.texSubImage2D=function(...args){
+  const [target,level,x,y,width,height,format,type,pixels]=args,stride=width*components.get(format);
+  const store=unpack.map(key=>[key,gl.getParameter(key)]);
+  if(args.length!==9||target!==gl.TEXTURE_2D||!ArrayBuffer.isView(pixels)||!stride||texture.generateMipmaps||store.slice(1,6).some(([,value])=>value!==0))return native.apply(gl,args);
+  jobs.push({args,stride,height:Math.min(height,Math.ceil(activeRows)),binding:gl.getParameter(gl.TEXTURE_BINDING_2D),store});
+ };
+ try{renderer.initTexture(texture);}finally{gl.texSubImage2D=native;}
+ let bytes=0;
+ for(const job of jobs){for(let from=0;from<job.height;from+=rows){
+  await yieldFrame();const count=Math.min(rows,job.height-from),args=job.args.slice(),active=gl.getParameter(gl.ACTIVE_TEXTURE),oldStore=unpack.map(key=>[key,gl.getParameter(key)]);
+  gl.activeTexture(gl.TEXTURE0);const oldTexture=gl.getParameter(gl.TEXTURE_BINDING_2D);
+  try{gl.bindTexture(gl.TEXTURE_2D,job.binding);for(const [key,value]of job.store)gl.pixelStorei(key,value);args[3]+=from;args[5]=count;args[8]=args[8].subarray(from*job.stride,(from+count)*job.stride);native.apply(gl,args);bytes+=args[8].byteLength;}
+  finally{for(const [key,value]of oldStore)gl.pixelStorei(key,value);gl.bindTexture(gl.TEXTURE_2D,oldTexture);gl.activeTexture(active);}
+ }}
+ return bytes;
 }

@@ -1,0 +1,28 @@
+import assert from 'node:assert/strict';
+import {createRawPrefetch} from './assets/history-raw-prefetch.mjs';
+let calls=0,aborted=0;
+const load=async(row,{signal})=>{calls++;signal.addEventListener('abort',()=>aborted++);return {row,buffer:new Uint8Array([row.id]).buffer};};
+const slot=createRawPrefetch(load),a={id:1,ply:'a',sha256:'a'},b={id:2,ply:'b',sha256:'b'};
+slot.warm(a);slot.warm(a);await Promise.resolve();
+assert.equal(new Uint8Array((await slot.take(a)).buffer)[0],1);assert.equal(calls,1);
+slot.warm(a);await new Promise(r=>setTimeout(r,0));slot.warm(b);assert.equal(aborted,0,'completed reads need no abort');
+assert.equal(new Uint8Array((await slot.take(b)).buffer)[0],2);assert.equal(calls,3);
+slot.warm(a);await new Promise(r=>setTimeout(r,0));slot.clear();assert.equal(aborted,0);
+let failed=true;
+const retry=createRawPrefetch(async()=>{if(failed)throw Error('read');return {buffer:new ArrayBuffer(1)};});
+retry.warm(a);await Promise.resolve();await Promise.resolve();failed=false;
+assert.equal((await retry.take(a)).buffer.byteLength,1);
+// A replaced in-flight request must never become the new slot's payload.
+let resolveOld;
+const delayed=createRawPrefetch((row)=>row===a?new Promise(r=>resolveOld=r):Promise.resolve({row}));
+delayed.warm(a);await new Promise(r=>setTimeout(r,0));delayed.warm(b);resolveOld({row:a});
+assert.equal((await delayed.take(b)).row,b);
+assert.equal(slot.stats.used,2);assert.equal(slot.stats.started,4);assert.equal(slot.stats.cleared,2);
+assert.equal(retry.stats.fallback,1);
+let releaseHash,active=0,peak=0,signalTaken;
+const bounded=createRawPrefetch(async(row,{signal})=>{active++;peak=Math.max(peak,active);signalTaken=signal;if(row===a)await new Promise(r=>releaseHash=r);active--;return {row};});
+bounded.warm(a);await new Promise(r=>setTimeout(r,0));
+const taken=bounded.take(a);bounded.clear();assert.equal(signalTaken.aborted,true,'clear must cancel the request already consumed by take');
+bounded.warm(b);await new Promise(r=>setTimeout(r,0));assert.equal(peak,1,'uncancellable hash must settle before replacement starts');
+releaseHash();await assert.rejects(taken,/cancel|abort/i);assert.equal((await bounded.take(b)).row,b);assert.equal(peak,1);
+console.log('raw prefetch: one slot, reuse, replacement abort, clear, failure retry, stale isolation passed');
