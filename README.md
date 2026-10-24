@@ -47,6 +47,7 @@
 需要 Python 3.10+ 和支持 WebGL2 的浏览器。**仓库不含大文件**，请先按 [`docs/ASSETS.md`](docs/ASSETS.md) 把 PLY 放到对应目录，再启动：
 
 ```powershell
+python tools/download_demo_assets.py
 python 工程/交互演示/server.py --host 127.0.0.1 --port 8765
 ```
 
