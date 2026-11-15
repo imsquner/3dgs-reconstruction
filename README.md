@@ -8,7 +8,7 @@
 
 ## 🎬 视频与图片
 
-[项目幻灯片](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/3dgs-reconstruction.pptx) · [全部媒体下载](https://github.com/imsquner/3dgs-reconstruction/releases/tag/v0.3.0-media)
+[项目幻灯片（图片型 PDF）](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/3dgs-reconstruction.pdf) · [全部媒体下载](https://github.com/imsquner/3dgs-reconstruction/releases/tag/v0.3.0-media)
 
 [![TUM 室内高斯场景](docs/media/demo-natural-2-tum.png)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-online-offline.mp4)
 
@@ -119,3 +119,5 @@ python 工程/交互演示/server.py --host 127.0.0.1 --port 8765
 ## 📚 文档与数据来源
 
 [资产清单](docs/ASSETS.md) · [数据来源与使用条款](docs/DATA_ATTRIBUTION.md) · [上游版本与许可](docs/UPSTREAM.md) · [运行说明](docs/RUNNING.md)
+
+如有项目相关问题，欢迎邮件联系高子明（<370295@whut.edu.cn>）。
