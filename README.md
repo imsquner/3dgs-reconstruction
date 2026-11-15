@@ -1,82 +1,121 @@
-# 3DGS Reconstruction · 演示版
+# 3DGS Reconstruction
 
-课程演示仓库：**3 条自然场景 + 2 条医学 C3VD 网格 + 1 组 4D 动态**。只保留演示所需代码、场景清单与文档；模型、点云、视频和数据集不进入 Git。
+**RGB-D 场景重建、Gaussian Splatting 渲染与 WebGL2 浏览**
 
-## 演示清单
+项目接入 GS-ICP 与 OOOSplat 两条室内高斯重建路线，以 Open3D 里程计和 TSDF 处理 C3VD 内镜序列，并通过独立播放器查看 Flow4DGS-SLAM 动态结果。仓库提供数据准备、上游适配、场景配置和网页查看器。
 
-| 编号 | 演示 | 路线 | 输入 | 结果 |
-|---|---|---|---|---|
-| 汇报① | Replica office0 | GS-ICP 在线 RGB-D SLAM | 1801 帧 RGB-D | 1,146,721 高斯 |
-| 汇报② | TUM office | GS-ICP 在线 RGB-D SLAM | 2515 帧 RGB-D | 484,990 高斯 |
-| 汇报③ | TUM office | COLMAP + OOOBrush 离线 | 2585 张 RGB | 500,544 高斯 |
-| 演示① | C3VD `trans_t2_b` | Open3D Park 里程计 + TSDF | 103 帧 RGB-D | 53,850 顶点网格 |
-| 演示② | C3VD `cecum_t1_a` | Open3D Park 里程计 + TSDF | 276 帧 RGB-D | 20,356 顶点网格 |
+---
 
-4D 动态（Flow4DGS-SLAM，TUM fr3 三条序列）在 [`工程/4dgs/`](工程/4dgs/README.md)。
+## 🎬 视频与图片
 
-## 演示截图
+[项目幻灯片](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/3dgs-reconstruction.pptx) · [全部媒体下载](https://github.com/imsquner/3dgs-reconstruction/releases/tag/v0.3.0-media)
 
-截图来自当前工作区实际页面（1440×900），不是历史素材。
+[![TUM 室内高斯场景](docs/media/demo-natural-2-tum.png)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-online-offline.mp4)
 
-**汇报① · Replica office0（GS-ICP 在线）**
+| 场景 | 视频 |
+| --- | --- |
+| Replica office0 | [Replica 轨迹视角](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-trajectory.mp4) · [Replica 全局视图](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-overview.mp4) |
+| TUM 室内 | [TUM 路径渲染](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-trajectory.mp4) · [TUM 全局视图](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-overview.mp4) · [TUM 高斯局部](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-gaussian-closeup.mp4) · [TUM 在线与离线对比](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-online-offline.mp4) |
+| C3VD `trans_t2_b` | [C3VD trans_t2_b 重建过程](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-trans-reconstruction.mp4) · [C3VD trans_t2_b 网格](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-trans-mesh.mp4) |
+| C3VD `cecum_t1_a` | [C3VD cecum_t1_a 重建过程](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-cecum-reconstruction.mp4) · [C3VD cecum_t1_a 网格](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-cecum-mesh.mp4) |
+| 4D 动态 | [4DGS 行走片段](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/4dgs-walking.mp4) · [4DGS 坐姿片段](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/4dgs-sitting.mp4) · [4DGS 行走逐帧回放](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/4dgs-walking-frame-by-frame.mp4) · [4DGS 坐姿讲话](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/4dgs-sitting-speaking.mp4) |
 
-![汇报①](docs/media/demo-natural-1-replica.png)
+<details>
+<summary>展开重建截图</summary>
 
-**汇报② · TUM office（GS-ICP 在线，沿轨迹视角）**
+| Replica office0 | OOOSplat 室内重建 |
+| --- | --- |
+| ![Replica office0 高斯渲染](docs/media/demo-natural-1-replica.png) | ![OOOSplat 高斯渲染](docs/media/demo-natural-3-ooosplat.png) |
 
-![汇报②](docs/media/demo-natural-2-tum.png)
+| C3VD trans_t2_b | C3VD cecum_t1_a |
+| --- | --- |
+| ![trans_t2_b 网格](docs/media/demo-medical-1-trans-t2-b.png) | ![cecum_t1_a 网格](docs/media/demo-medical-2-cecum.png) |
 
-**汇报③ · OOOSplat 离线重建（沿轨迹视角）**
+| TUM 重建对比图 A | TUM 重建对比图 B |
+| --- | --- |
+| ![TUM 重建对比图 A](docs/media/tum-comparison-a.png) | ![TUM 重建对比图 B](docs/media/tum-comparison-b.png) |
 
-![汇报③](docs/media/demo-natural-3-ooosplat.png)
+</details>
 
-**演示① · C3VD `trans_t2_b` 三角网格**
+---
 
-![演示①](docs/media/demo-medical-1-trans-t2-b.png)
+## ✨ 特性
 
-**演示② · C3VD `cecum_t1_a` 三角网格**
+| 能力 | 实现 |
+| --- | --- |
+| RGB-D 高斯建图 | GS-ICP 处理按时间配对的 RGB 与深度帧，输出相机轨迹和高斯地图 |
+| 离线高斯重建 | COLMAP 恢复相机位姿，OOOSplat / OOOBrush 生成高斯场景 |
+| 医学表面重建 | Open3D RGB-D Park 里程计估计位姿，TSDF 融合后提取三角网格 |
+| 动态场景回放 | Flow4DGS-SLAM 导出训练视角结果，通过独立网页按时间轴回放 |
+| 浏览与复现 | WebGL2 查看器支持场景切换，下载脚本按清单校验资产 SHA-256 |
 
-![演示②](docs/media/demo-medical-2-cecum.png)
+---
 
-**观测累计（本地功能，资产不随仓库发布）**
+## 🏗 系统架构
 
-![观测累计](docs/media/demo-medical-1-observation.png)
+```text
+Replica / TUM RGB-D ── GS-ICP ─────────────── Gaussian PLY ──┐
+TUM RGB ───────────── COLMAP + OOOBrush ───── Gaussian PLY ──┤
+C3VD RGB-D ────────── Park 里程计 + TSDF ─── 三角网格 PLY ───┤
+                                                             └─ 场景配置 → WebGL2 查看器
+TUM fr3 动态序列 ───── Flow4DGS-SLAM ───────── 导出模型与渲染帧 → 4D 播放器
+```
 
-## 快速开始
+静态场景的路径和显示参数由场景配置管理。重建所需的上游版本和构建依赖见 [上游项目](docs/UPSTREAM.md) 与 [运行说明](docs/RUNNING.md)。
 
-需要 Python 3.10+ 和支持 WebGL2 的浏览器。**仓库不含大文件**，请先按 [`docs/ASSETS.md`](docs/ASSETS.md) 把 PLY 放到对应目录，再启动：
+---
+
+## 🚀 快速开始
+
+### 1. 环境
+
+浏览现有静态场景需要 Python 3.10+ 和支持 WebGL2 的浏览器。参照 [环境说明](docs/ENVIRONMENT.md) 配置完整重建环境。
+
+### 2. 下载场景资产
+
+从仓库根目录执行，脚本会下载并校验五个静态场景文件。
 
 ```powershell
 python tools/download_demo_assets.py
+```
+
+### 3. 启动查看器
+
+```powershell
 python 工程/交互演示/server.py --host 127.0.0.1 --port 8765
 ```
 
-打开 <http://127.0.0.1:8765/>。请用 HTTP 服务访问，不要双击 HTML。
+浏览器访问 <http://127.0.0.1:8765/>。4D 播放器使用独立服务，需要对应的本地导出文件，配置见 [4DGS 运行说明](工程/4dgs/README.md)。
 
-4D 回放：
+---
 
-```powershell
-python 工程/4dgs/网页/server.py --port 8770
-```
+## 📊 重建结果
 
-## 目录
+| 场景 | 输入 | 产物 |
+| --- | ---: | ---: |
+| Replica office0 · GS-ICP | 1,801 帧 RGB-D | 1,146,721 个高斯 |
+| TUM 室内 · GS-ICP | 2,515 帧 RGB-D | 484,990 个高斯 |
+| TUM 室内 · OOOSplat | 2,585 张 RGB 图像 | 500,544 个高斯 |
+| C3VD `trans_t2_b` · TSDF | 103 帧 RGB-D | 53,850 个网格顶点 |
+| C3VD `cecum_t1_a` · TSDF | 276 帧 RGB-D | 20,356 个网格顶点 |
+
+这些数量描述各场景的输入和产物规模。评价口径见 [验证记录](docs/VALIDATION.md)。
+
+---
+
+## 📁 目录结构
 
 ```text
-工程/交互演示/     网页源码、catalog、场景 JSON、构建/适配脚本
-工程/4dgs/         4D 回放服务、方案与验收文档
-工程/课程扩展/     数据准备与 GS-ICP 运行脚本
-docs/              来源、资产清单、展示边界、运行说明
-tools/             资产下载与校验脚本
+3dgs-reconstruction/
+├── 工程/
+│   ├── 交互演示/        静态查看器、场景配置和资产适配
+│   ├── 4dgs/            动态场景回放
+│   └── 课程扩展/        数据准备与 GS-ICP 运行脚本
+├── docs/               运行、资产、数据来源和图片
+├── tools/              下载、校验和复现工具
+└── tests/              场景配置检查
 ```
 
-## 边界
+## 📚 文档与数据来源
 
-- 汇报①② 无回环、无全局 BA，轨迹会漂移；ATE 只能与同口径比较。
-- 汇报③ 是离线 SfM + 训练，**无实时性、无绝对尺度**。
-- 演示①② 只用 RGB + 注册参考深度估计位姿，GT 位姿仅用于评价。
-- 观测累计（点云回放）资产不随仓库发布，仓库版按钮置灰。
-- 4DGS 是训练视角重建，不能环绕；±15°/±10°/±0.2 m 是安全范围。
-
-## 上游与许可
-
-见 [`docs/UPSTREAM.md`](docs/UPSTREAM.md)。本仓库不打包第三方源码，复现按其中 commit 拉取；C3VD 等数据不重新分发。
+[资产清单](docs/ASSETS.md) · [数据来源与使用条款](docs/DATA_ATTRIBUTION.md) · [上游版本与许可](docs/UPSTREAM.md) · [运行说明](docs/RUNNING.md)
