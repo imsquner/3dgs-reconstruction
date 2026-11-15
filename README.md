@@ -10,11 +10,19 @@
 
 [项目幻灯片（图片型 PDF）](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/3dgs-reconstruction.pdf) · [全部媒体下载](https://github.com/imsquner/3dgs-reconstruction/releases/tag/v0.3.0-media)
 
-[![TUM 室内高斯场景](docs/media/demo-natural-2-tum.png)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-online-offline.mp4)
+### Replica office0 · 合成室内场景
+
+[![Replica office0 在轨迹视角下的高斯重建](docs/media/replica-office0-cover.jpg)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-trajectory.mp4)
+
+| 轨迹视角 | 全局视图 |
+| :---: | :---: |
+| [![Replica 轨迹视角动态预览](docs/media/replica-office0-trajectory.gif)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-trajectory.mp4) | [![Replica 全局视图动态预览](docs/media/replica-office0-overview.gif)](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-overview.mp4) |
+| [完整视频](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-trajectory.mp4) | [完整视频](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-overview.mp4) |
+
+### 其他场景
 
 | 场景 | 视频 |
 | --- | --- |
-| Replica office0 | [Replica 轨迹视角](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-trajectory.mp4) · [Replica 全局视图](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/replica-overview.mp4) |
 | TUM 室内 | [TUM 路径渲染](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-trajectory.mp4) · [TUM 全局视图](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-overview.mp4) · [TUM 高斯局部](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-gaussian-closeup.mp4) · [TUM 在线与离线对比](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/tum-online-offline.mp4) |
 | C3VD `trans_t2_b` | [C3VD trans_t2_b 重建过程](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-trans-reconstruction.mp4) · [C3VD trans_t2_b 网格](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-trans-mesh.mp4) |
 | C3VD `cecum_t1_a` | [C3VD cecum_t1_a 重建过程](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-cecum-reconstruction.mp4) · [C3VD cecum_t1_a 网格](https://github.com/imsquner/3dgs-reconstruction/releases/download/v0.3.0-media/c3vd-cecum-mesh.mp4) |
